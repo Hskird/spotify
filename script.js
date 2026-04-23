@@ -211,8 +211,8 @@ const translations = {
     "country.text":
       "Select your country, then continue directly to WhatsApp with your request ready to send.",
     "country.requestLabel": "Selected request",
-    "country.searchLabel": "Enter your name",
-    "country.searchPlaceholder": "Enter your name",
+    "country.nameLabel": "Your name",
+    "country.namePlaceholder": "Enter your name",
     "country.selectLabel": "Country",
     "country.chooseOption": "Select a country",
     "country.noResults": "No countries found",
@@ -376,9 +376,12 @@ const translations = {
     "alerts.copySuccess": "Wallet address copied.",
     "alerts.copyFallback": "Copy this wallet address:",
     "alerts.chooseCountry": "Please choose a country before continuing.",
+    "alerts.enterName": "Please enter your name before continuing.",
     "alerts.messageCopied": "Your order message was copied. Paste it in WhatsApp after the chat opens.",
     "alerts.messageCopyFallback": "Copy and paste this message in WhatsApp:",
-    "order.message":
+    "order.messageWithName":
+      "Hello, my name is {{name}}. I want to order the {{request}}. Country: {{country}}.",
+    "order.messageWithoutName":
       "Hello, I want to order the {{request}}. Country: {{country}}.",
   },
   fr: {
@@ -389,8 +392,8 @@ const translations = {
     "country.text":
       "Selectionnez votre pays, puis continuez directement sur WhatsApp avec votre demande prete a envoyer.",
     "country.requestLabel": "Demande selectionnee",
-    "country.searchLabel": "Entrez votre nom",
-    "country.searchPlaceholder": "Entrez votre nom",
+    "country.nameLabel": "Votre nom",
+    "country.namePlaceholder": "Entrez votre nom",
     "country.selectLabel": "Pays",
     "country.chooseOption": "Choisissez un pays",
     "country.noResults": "Aucun pays trouve",
@@ -555,10 +558,13 @@ const translations = {
     "alerts.copySuccess": "Adresse du wallet copiee.",
     "alerts.copyFallback": "Copiez cette adresse :",
     "alerts.chooseCountry": "Veuillez choisir un pays avant de continuer.",
+    "alerts.enterName": "Veuillez entrer votre nom avant de continuer.",
     "alerts.messageCopied":
       "Votre message de commande a ete copie. Collez-le dans WhatsApp apres l'ouverture de la discussion.",
     "alerts.messageCopyFallback": "Copiez puis collez ce message dans WhatsApp :",
-    "order.message":
+    "order.messageWithName":
+      "Bonjour, je m'appelle {{name}}. Je veux commander {{request}}. Pays : {{country}}.",
+    "order.messageWithoutName":
       "Bonjour, je veux commander {{request}}. Pays : {{country}}.",
   },
 };
@@ -576,7 +582,7 @@ const placeholderNodes = document.querySelectorAll("[data-i18n-placeholder]");
 const walletNodes = document.querySelectorAll("[data-address]");
 const headerNavLinks = document.querySelectorAll(".desktop-nav a");
 const countryModal = document.querySelector("[data-country-modal]");
-const countrySearch = document.querySelector("[data-country-search]");
+const countryNameInput = document.querySelector("[data-country-name]");
 const countrySelect = document.querySelector("[data-country-select]");
 const countryConfirm = document.querySelector("[data-country-confirm]");
 const countryRequestOutput = document.querySelector("[data-country-request]");
@@ -613,7 +619,7 @@ function translatePage(language) {
   });
 
   updateCountryRequest();
-  populateCountryOptions(countrySearch ? countrySearch.value : "");
+  populateCountryOptions();
 }
 
 function getRequestLabel(orderType) {
@@ -628,32 +634,29 @@ function updateCountryRequest() {
   countryRequestOutput.textContent = getRequestLabel(pendingOrderType);
 }
 
-function populateCountryOptions(filter = "") {
+function populateCountryOptions() {
   if (!countrySelect) {
     return;
   }
 
-  const normalizedFilter = filter.trim().toLowerCase();
   const currentValue = countrySelect.value;
-  const matchingCountries = COUNTRIES.filter((country) => country.toLowerCase().includes(normalizedFilter));
   const placeholder = translations[currentLanguage]["country.chooseOption"];
-  const noResults = translations[currentLanguage]["country.noResults"];
 
   countrySelect.innerHTML = "";
 
   const defaultOption = document.createElement("option");
   defaultOption.value = "";
-  defaultOption.textContent = matchingCountries.length ? placeholder : noResults;
+  defaultOption.textContent = placeholder;
   countrySelect.appendChild(defaultOption);
 
-  matchingCountries.forEach((country) => {
+  COUNTRIES.forEach((country) => {
     const option = document.createElement("option");
     option.value = country;
     option.textContent = country;
     countrySelect.appendChild(option);
   });
 
-  if (matchingCountries.includes(currentValue)) {
+  if (COUNTRIES.includes(currentValue)) {
     countrySelect.value = currentValue;
   } else {
     countrySelect.value = "";
@@ -667,9 +670,6 @@ function openCountryModal(orderType) {
 
   pendingOrderType = orderType || "general";
   updateCountryRequest();
-  if (countrySearch) {
-    countrySearch.value = "";
-  }
   populateCountryOptions();
   countryModal.classList.add("is-open");
   countryModal.setAttribute("aria-hidden", "false");
@@ -720,8 +720,10 @@ function handleOrder() {
     return;
   }
 
-  const messageTemplate = translations[currentLanguage]["order.message"];
-  const message = messageTemplate
+  const customerName = countryNameInput ? countryNameInput.value.trim() : "";
+  const messageKey = customerName ? "order.messageWithName" : "order.messageWithoutName";
+  const message = translations[currentLanguage][messageKey]
+    .replace("{{name}}", customerName)
     .replace("{{request}}", getRequestLabel(pendingOrderType))
     .replace("{{country}}", countrySelect.value);
   const whatsappOrder = buildWhatsAppOrderUrl(message);
@@ -788,12 +790,6 @@ headerNavLinks.forEach((link) => {
 
 if (menuToggle) {
   menuToggle.addEventListener("click", toggleMenu);
-}
-
-if (countrySearch) {
-  countrySearch.addEventListener("input", () => {
-    populateCountryOptions(countrySearch.value);
-  });
 }
 
 if (countrySelect) {
