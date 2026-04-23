@@ -134,6 +134,7 @@ button {
 
 .desktop-nav {
   display: flex;
+  flex-wrap: wrap;
   gap: 22px;
 }
 
@@ -189,6 +190,7 @@ button {
 
 .hero,
 .plans-section,
+.savings-section,
 .benefits-section,
 .process-section,
 .reviews-section,
@@ -206,6 +208,7 @@ button {
 .hero-copy,
 .hero-panel,
 .plan-card,
+.savings-card,
 .benefit-card,
 .process-card,
 .payment-card,
@@ -261,6 +264,7 @@ button {
 .trust-row,
 .mini-grid,
 .plans-grid,
+.savings-grid,
 .benefits-grid,
 .process-grid,
 .reviews-grid,
@@ -275,10 +279,9 @@ button {
 }
 
 .trust-row {
-  grid-template-columns: repeat(3, max-content);
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   margin-top: 30px;
   gap: 10px;
-  flex-wrap: wrap;
 }
 
 .trust-row span {
@@ -298,6 +301,17 @@ button {
   border-radius: 50%;
   background: var(--brand);
   box-shadow: 0 0 0 5px rgba(20, 133, 76, 0.14);
+}
+
+.comparison-note {
+  margin: 18px 0 0;
+  padding: 14px 16px;
+  border: 1px solid rgba(20, 133, 76, 0.12);
+  border-radius: 18px;
+  font-size: 0.96rem;
+  line-height: 1.7;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.72);
 }
 
 .primary-btn,
@@ -408,15 +422,77 @@ button {
 }
 
 .plans-grid,
+.savings-grid,
 .payments-grid,
 .benefits-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .plan-card,
+.savings-card,
 .payment-card,
 .benefit-card {
   padding: 30px;
+}
+
+.savings-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.savings-card h3 {
+  margin: 0 0 16px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.55rem;
+  line-height: 1.15;
+}
+
+.featured-savings {
+  background:
+    radial-gradient(circle at top right, rgba(20, 133, 76, 0.2), transparent 26%),
+    rgba(255, 255, 255, 0.84);
+  border-color: rgba(20, 133, 76, 0.18);
+}
+
+.comparison-card {
+  background:
+    radial-gradient(circle at top right, rgba(255, 191, 112, 0.22), transparent 22%),
+    rgba(255, 255, 255, 0.82);
+}
+
+.savings-list {
+  margin: 0 0 22px;
+  padding: 0;
+  list-style: none;
+}
+
+.savings-list li {
+  position: relative;
+  padding: 0 0 0 24px;
+  line-height: 1.75;
+  color: var(--muted);
+}
+
+.savings-list li + li {
+  margin-top: 10px;
+}
+
+.savings-list li::before {
+  content: "";
+  position: absolute;
+  top: 0.72em;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--brand);
+  box-shadow: 0 0 0 5px rgba(20, 133, 76, 0.12);
+}
+
+.pricing-footnote {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--muted);
 }
 
 .benefit-card h3 {
@@ -636,6 +712,7 @@ button {
 @media (max-width: 1080px) {
   .hero,
   .plans-grid,
+  .savings-grid,
   .benefits-grid,
   .payments-grid,
   .process-grid,
@@ -661,12 +738,14 @@ button {
   }
 
   .desktop-nav {
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
   }
 
   .desktop-nav a {
     font-size: 0.92rem;
+    text-align: center;
   }
 
   .language-switch,
@@ -683,10 +762,6 @@ button {
   }
 
   .hero-actions {
-    display: grid;
-  }
-
-  .trust-row {
     display: grid;
   }
 
@@ -718,7 +793,10 @@ button {
   }
 
   .plan-card,
+  .savings-card,
   .payment-card,
+  .benefit-card,
+  .review-card,
   .process-card,
   .hero-copy,
   .hero-panel,
