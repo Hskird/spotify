@@ -376,6 +376,8 @@ const translations = {
     "alerts.copySuccess": "Wallet address copied.",
     "alerts.copyFallback": "Copy this wallet address:",
     "alerts.chooseCountry": "Please choose a country before continuing.",
+    "alerts.messageCopied": "Your order message was copied. Paste it in WhatsApp after the chat opens.",
+    "alerts.messageCopyFallback": "Copy and paste this message in WhatsApp:",
     "order.message":
       "Hello, I want to order the {{request}}. Country: {{country}}.",
   },
@@ -553,6 +555,9 @@ const translations = {
     "alerts.copySuccess": "Adresse du wallet copiee.",
     "alerts.copyFallback": "Copiez cette adresse :",
     "alerts.chooseCountry": "Veuillez choisir un pays avant de continuer.",
+    "alerts.messageCopied":
+      "Votre message de commande a ete copie. Collez-le dans WhatsApp apres l'ouverture de la discussion.",
+    "alerts.messageCopyFallback": "Copiez puis collez ce message dans WhatsApp :",
     "order.message":
       "Bonjour, je veux commander {{request}}. Pays : {{country}}.",
   },
@@ -682,6 +687,33 @@ function closeCountryModal() {
   document.body.classList.remove("modal-open");
 }
 
+async function copyOrderMessage(message) {
+  try {
+    await navigator.clipboard.writeText(message);
+    window.alert(translations[currentLanguage]["alerts.messageCopied"]);
+  } catch (error) {
+    window.prompt(translations[currentLanguage]["alerts.messageCopyFallback"], message);
+  }
+}
+
+function buildWhatsAppOrderUrl(message) {
+  const baseLink = CONFIG.whatsappLink.trim();
+
+  if (/wa\.me\/message\//i.test(baseLink)) {
+    return {
+      url: baseLink,
+      copiedMessage: message,
+    };
+  }
+
+  const separator = baseLink.includes("?") ? "&" : "?";
+
+  return {
+    url: `${baseLink}${separator}text=${encodeURIComponent(message)}`,
+    copiedMessage: "",
+  };
+}
+
 function handleOrder() {
   if (!countrySelect || !countrySelect.value) {
     window.alert(translations[currentLanguage]["alerts.chooseCountry"]);
@@ -692,11 +724,14 @@ function handleOrder() {
   const message = messageTemplate
     .replace("{{request}}", getRequestLabel(pendingOrderType))
     .replace("{{country}}", countrySelect.value);
-  const separator = CONFIG.whatsappLink.includes("?") ? "&" : "?";
-  const whatsappUrl = `${CONFIG.whatsappLink}${separator}text=${encodeURIComponent(message)}`;
+  const whatsappOrder = buildWhatsAppOrderUrl(message);
 
   closeCountryModal();
-  window.open(whatsappUrl, "_blank", "noopener");
+  window.open(whatsappOrder.url, "_blank", "noopener");
+
+  if (whatsappOrder.copiedMessage) {
+    copyOrderMessage(whatsappOrder.copiedMessage);
+  }
 }
 
 function closeMenu() {
