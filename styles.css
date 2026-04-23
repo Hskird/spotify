@@ -62,9 +62,6 @@ button {
 }
 
 .site-header {
-  position: sticky;
-  top: 18px;
-  z-index: 20;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -405,6 +402,14 @@ button {
   line-height: 1;
 }
 
+.support-value {
+  display: block;
+  max-width: 100%;
+  font-size: clamp(1.35rem, 3vw, 2.2rem) !important;
+  line-height: 1.05;
+  overflow-wrap: anywhere;
+}
+
 .section-heading {
   margin-bottom: 20px;
 }
@@ -688,27 +693,6 @@ button {
   text-align: right;
 }
 
-.floating-order {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  z-index: 30;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 14px 16px;
-  border: 1px solid rgba(255, 255, 255, 0.58);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.78);
-  backdrop-filter: blur(18px);
-  box-shadow: 0 20px 46px rgba(36, 40, 37, 0.14);
-}
-
-.floating-order p {
-  margin: 0;
-  font-weight: 700;
-}
-
 @media (max-width: 1080px) {
   .hero,
   .plans-grid,
@@ -763,17 +747,6 @@ button {
 
   .hero-actions {
     display: grid;
-  }
-
-  .floating-order {
-    left: 10px;
-    right: 10px;
-    bottom: 10px;
-    justify-content: space-between;
-  }
-
-  .floating-order p {
-    display: none;
   }
 
   .disclaimer {
