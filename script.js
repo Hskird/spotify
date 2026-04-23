@@ -211,8 +211,8 @@ const translations = {
     "country.text":
       "Select your country, then continue directly to WhatsApp with your request ready to send.",
     "country.requestLabel": "Selected request",
-    "country.searchLabel": "Search country",
-    "country.searchPlaceholder": "Type a country name",
+    "country.searchLabel": "Enter your country",
+    "country.searchPlaceholder": "Enter your country",
     "country.selectLabel": "Country",
     "country.chooseOption": "Select a country",
     "country.noResults": "No countries found",
@@ -387,8 +387,8 @@ const translations = {
     "country.text":
       "Selectionnez votre pays, puis continuez directement sur WhatsApp avec votre demande prete a envoyer.",
     "country.requestLabel": "Demande selectionnee",
-    "country.searchLabel": "Rechercher un pays",
-    "country.searchPlaceholder": "Tapez un nom de pays",
+    "country.searchLabel": "Entrez votre pays",
+    "country.searchPlaceholder": "Entrez votre pays",
     "country.selectLabel": "Pays",
     "country.chooseOption": "Choisissez un pays",
     "country.noResults": "Aucun pays trouve",
