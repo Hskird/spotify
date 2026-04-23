@@ -320,11 +320,14 @@ const translations = {
 
 let currentLanguage = "en";
 
+const siteHeader = document.querySelector(".site-header");
+const menuToggle = document.querySelector("[data-menu-toggle]");
 const langButtons = document.querySelectorAll("[data-lang]");
 const orderButtons = document.querySelectorAll("[data-order]");
 const copyButtons = document.querySelectorAll("[data-copy-address]");
 const translatableNodes = document.querySelectorAll("[data-i18n]");
 const walletNodes = document.querySelectorAll("[data-address]");
+const headerNavLinks = document.querySelectorAll(".desktop-nav a");
 
 function translatePage(language) {
   currentLanguage = language;
@@ -350,6 +353,24 @@ function handleOrder() {
   window.open(CONFIG.whatsappLink, "_blank", "noopener");
 }
 
+function closeMenu() {
+  if (!siteHeader || !menuToggle) {
+    return;
+  }
+
+  siteHeader.classList.remove("menu-open");
+  menuToggle.setAttribute("aria-expanded", "false");
+}
+
+function toggleMenu() {
+  if (!siteHeader || !menuToggle) {
+    return;
+  }
+
+  const isOpen = siteHeader.classList.toggle("menu-open");
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+}
+
 async function copyAddress() {
   try {
     await navigator.clipboard.writeText(CONFIG.cryptoAddress);
@@ -366,6 +387,7 @@ walletNodes.forEach((node) => {
 langButtons.forEach((button) => {
   button.addEventListener("click", () => {
     translatePage(button.dataset.lang);
+    closeMenu();
   });
 });
 
@@ -378,5 +400,13 @@ orderButtons.forEach((button) => {
 copyButtons.forEach((button) => {
   button.addEventListener("click", copyAddress);
 });
+
+headerNavLinks.forEach((link) => {
+  link.addEventListener("click", closeMenu);
+});
+
+if (menuToggle) {
+  menuToggle.addEventListener("click", toggleMenu);
+}
 
 translatePage(currentLanguage);

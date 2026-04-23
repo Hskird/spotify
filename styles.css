@@ -63,6 +63,7 @@ button {
 }
 
 .site-header {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -134,12 +135,35 @@ button {
   display: flex;
   align-items: center;
   gap: 18px;
+  margin-left: auto;
 }
 
 .desktop-nav {
   display: flex;
   flex-wrap: wrap;
   gap: 22px;
+}
+
+.menu-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 20px;
+  height: 2.5px;
+  margin: 3px 0;
+  border-radius: 999px;
+  background: #ffffff;
 }
 
 .desktop-nav a {
@@ -785,27 +809,22 @@ button {
     padding-top: 12px;
   }
 
-  .site-header,
-  .header-actions {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
   .site-header {
+    align-items: center;
     gap: 12px;
     margin-bottom: 20px;
-    padding: 14px;
-    border-radius: 28px;
+    padding: 14px 16px;
+    border-radius: 22px;
   }
 
   .brand {
     gap: 12px;
+    min-width: 0;
   }
 
   .brand-mark {
     width: 42px;
     height: 42px;
-    border-radius: 12px;
   }
 
   .brand-copy strong {
@@ -813,12 +832,41 @@ button {
   }
 
   .brand-copy span {
-    font-size: 0.9rem;
+    display: none;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+    flex-direction: column;
+    flex-shrink: 0;
+  }
+
+  .header-actions {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    left: 0;
+    z-index: 15;
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    margin-left: 0;
+    padding: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    background:
+      radial-gradient(circle at top right, rgba(29, 185, 84, 0.12), transparent 26%),
+      rgba(10, 10, 10, 0.96);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.34);
+  }
+
+  .site-header.menu-open .header-actions {
+    display: flex;
   }
 
   .desktop-nav {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 8px;
   }
 
@@ -925,6 +973,11 @@ button {
   .site-header {
     padding: 12px;
     border-radius: 24px;
+  }
+
+  .menu-toggle {
+    width: 44px;
+    height: 44px;
   }
 
   .desktop-nav {
