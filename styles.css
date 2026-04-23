@@ -810,6 +810,8 @@ button {
   }
 
   .site-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
     align-items: center;
     gap: 12px;
     margin-bottom: 20px;
@@ -842,15 +844,12 @@ button {
   }
 
   .header-actions {
-    position: absolute;
-    top: calc(100% + 10px);
-    right: 0;
-    left: 0;
-    z-index: 15;
+    grid-column: 1 / -1;
     display: none;
     flex-direction: column;
     gap: 12px;
     margin-left: 0;
+    margin-top: 10px;
     padding: 14px;
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 20px;
@@ -862,6 +861,11 @@ button {
 
   .site-header.menu-open .header-actions {
     display: flex;
+  }
+
+  .site-header.menu-open .menu-toggle {
+    background: rgba(29, 185, 84, 0.12);
+    border-color: rgba(29, 185, 84, 0.22);
   }
 
   .desktop-nav {
