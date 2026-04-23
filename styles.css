@@ -352,6 +352,7 @@ button {
   display: grid;
   gap: 16px;
   padding: 20px;
+  min-width: 0;
 }
 
 .panel-card {
@@ -359,6 +360,7 @@ button {
   border-radius: var(--radius-md);
   background: rgba(255, 255, 255, 0.84);
   border: 1px solid rgba(255, 255, 255, 0.65);
+  min-width: 0;
 }
 
 .panel-highlight {
@@ -405,9 +407,20 @@ button {
 .support-value {
   display: block;
   max-width: 100%;
-  font-size: clamp(1.35rem, 3vw, 2.2rem) !important;
-  line-height: 1.05;
-  overflow-wrap: anywhere;
+  font-size: clamp(1rem, 1.8vw, 1.55rem) !important;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+  overflow-wrap: normal;
+  word-break: normal;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+@media (max-width: 1280px) {
+  .mini-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .section-heading {
