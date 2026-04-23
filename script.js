@@ -1,13 +1,13 @@
 const CONFIG = {
-  brandName: "Premium Access",
+  brandName: "StreamMint",
   whatsappLink: "https://wa.me/message/UEWW7WSMLFF3A1",
   cryptoAddress: "0xdc33660ee6335bbe15a7cfd9dbc96c9153a0445a",
 };
 
 const translations = {
   en: {
-    "brand.name": "Premium Access",
-    "brand.subtitle": "Premium plan ordering",
+    "brand.name": "StreamMint",
+    "brand.subtitle": "Spotify plan ordering",
     "nav.plans": "Plans",
     "nav.savings": "Savings",
     "nav.benefits": "Benefits",
@@ -39,6 +39,7 @@ const translations = {
       "One clear price, direct ordering, and support included for the covered period.",
     "plans.basicBadge": "Popular choice",
     "plans.featuredBadge": "Best value",
+    "plans.savingsToggle": "See how much you save vs Spotify",
     "plans.oneYear.title": "1 Year",
     "plans.oneYear.savings": "You save about $117.88 vs Spotify over 12 months.",
     "plans.oneYear.feature1": "1 full year access",
@@ -151,7 +152,7 @@ const translations = {
     "faq.q3.title": "Which payment methods do you accept?",
     "faq.q3.text":
       "PayPal, instant bank transfer, and crypto are available. Confirm your preferred method on WhatsApp before paying.",
-    "footer.brand": "Premium Access",
+    "footer.brand": "StreamMint",
     "footer.text": "Professional ordering page with direct contact and clear pricing.",
     "footer.disclaimer": "Independent seller. This website is not affiliated with or endorsed by Spotify.",
     "floating.text": "Ready to order?",
@@ -160,8 +161,8 @@ const translations = {
     "alerts.copyFallback": "Copy this wallet address:",
   },
   fr: {
-    "brand.name": "Premium Access",
-    "brand.subtitle": "Commande de forfaits premium",
+    "brand.name": "StreamMint",
+    "brand.subtitle": "Commande de forfaits Spotify",
     "nav.plans": "Offres",
     "nav.savings": "Promos",
     "nav.benefits": "Avantages",
@@ -193,6 +194,7 @@ const translations = {
       "Un prix clair, une commande directe et un support inclus pendant toute la periode couverte.",
     "plans.basicBadge": "Choix populaire",
     "plans.featuredBadge": "Meilleur prix",
+    "plans.savingsToggle": "Voir combien vous economisez face a Spotify",
     "plans.oneYear.title": "1 an",
     "plans.oneYear.savings": "Vous economisez environ 117.88 $ par rapport a Spotify sur 12 mois.",
     "plans.oneYear.feature1": "Acces complet pendant 1 an",
@@ -305,7 +307,7 @@ const translations = {
     "faq.q3.title": "Quels moyens de paiement acceptez-vous ?",
     "faq.q3.text":
       "PayPal, virement instantane et crypto sont disponibles. Confirmez votre methode preferee sur WhatsApp avant de payer.",
-    "footer.brand": "Premium Access",
+    "footer.brand": "StreamMint",
     "footer.text": "Page de commande professionnelle avec contact direct et prix clairs.",
     "footer.disclaimer":
       "Vendeur independant. Ce site n'est pas affilie a Spotify et n'est pas approuve par Spotify.",

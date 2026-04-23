@@ -89,12 +89,16 @@ button {
   place-items: center;
   width: 48px;
   height: 48px;
-  border-radius: 16px;
-  font-family: "Space Grotesk", sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  color: #fff;
-  background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+  flex-shrink: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 12px 24px rgba(29, 185, 84, 0.18);
+}
+
+.brand-mark svg {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .brand-copy {
@@ -541,23 +545,39 @@ button {
   font-size: 2rem;
 }
 
-.plan-savings {
+.plan-details {
   margin: 0 0 18px;
-  padding: 10px 12px;
-  border: 1px solid rgba(29, 185, 84, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 14px;
-  font-size: 0.95rem;
-  font-weight: 700;
-  line-height: 1.5;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.plan-details summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 12px 14px;
+  font-size: 0.92rem;
+  font-weight: 800;
   color: #b5ffd0;
-  background: rgba(29, 185, 84, 0.1);
+}
+
+.plan-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.plan-details p {
+  margin: 0;
+  padding: 0 14px 14px;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--muted);
 }
 
 .plan-card.featured .plan-badge,
 .plan-card.featured h3,
 .plan-card.featured .price,
 .plan-card.featured .feature-list li,
-.plan-card.featured .plan-savings {
+.plan-card.featured .plan-details summary {
   color: #ffffff;
 }
 
@@ -565,9 +585,12 @@ button {
   background: rgba(255, 255, 255, 0.14);
 }
 
-.plan-card.featured .plan-savings {
-  border-color: rgba(255, 255, 255, 0.16);
+.plan-card.featured .plan-details {
+  border-color: rgba(255, 255, 255, 0.14);
   background: rgba(255, 255, 255, 0.08);
+}
+
+.plan-card.featured .plan-details p {
   color: #eafff2;
 }
 
