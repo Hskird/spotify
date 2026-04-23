@@ -1,6 +1,6 @@
 const CONFIG = {
   brandName: "StreamMint",
-  whatsappLink: "https://wa.me/message/UEWW7WSMLFF3A1",
+  whatsappLink: "https://wa.me/212627655225",
   cryptoAddress: "0xdc33660ee6335bbe15a7cfd9dbc96c9153a0445a",
 };
 
@@ -377,8 +377,6 @@ const translations = {
     "alerts.copyFallback": "Copy this wallet address:",
     "alerts.chooseCountry": "Please choose a country before continuing.",
     "alerts.enterName": "Please enter your name before continuing.",
-    "alerts.messageCopied": "Your order message was copied. Paste it in WhatsApp after the chat opens.",
-    "alerts.messageCopyFallback": "Copy and paste this message in WhatsApp:",
     "order.messageWithName":
       "Hello, my name is {{name}}. I want to order the {{request}}. Country: {{country}}.",
     "order.messageWithoutName":
@@ -559,9 +557,6 @@ const translations = {
     "alerts.copyFallback": "Copiez cette adresse :",
     "alerts.chooseCountry": "Veuillez choisir un pays avant de continuer.",
     "alerts.enterName": "Veuillez entrer votre nom avant de continuer.",
-    "alerts.messageCopied":
-      "Votre message de commande a ete copie. Collez-le dans WhatsApp apres l'ouverture de la discussion.",
-    "alerts.messageCopyFallback": "Copiez puis collez ce message dans WhatsApp :",
     "order.messageWithName":
       "Bonjour, je m'appelle {{name}}. Je veux commander {{request}}. Pays : {{country}}.",
     "order.messageWithoutName":
@@ -687,31 +682,11 @@ function closeCountryModal() {
   document.body.classList.remove("modal-open");
 }
 
-async function copyOrderMessage(message) {
-  try {
-    await navigator.clipboard.writeText(message);
-    window.alert(translations[currentLanguage]["alerts.messageCopied"]);
-  } catch (error) {
-    window.prompt(translations[currentLanguage]["alerts.messageCopyFallback"], message);
-  }
-}
-
 function buildWhatsAppOrderUrl(message) {
   const baseLink = CONFIG.whatsappLink.trim();
-
-  if (/wa\.me\/message\//i.test(baseLink)) {
-    return {
-      url: baseLink,
-      copiedMessage: message,
-    };
-  }
-
   const separator = baseLink.includes("?") ? "&" : "?";
 
-  return {
-    url: `${baseLink}${separator}text=${encodeURIComponent(message)}`,
-    copiedMessage: "",
-  };
+  return `${baseLink}${separator}text=${encodeURIComponent(message)}`;
 }
 
 function handleOrder() {
@@ -726,14 +701,10 @@ function handleOrder() {
     .replace("{{name}}", customerName)
     .replace("{{request}}", getRequestLabel(pendingOrderType))
     .replace("{{country}}", countrySelect.value);
-  const whatsappOrder = buildWhatsAppOrderUrl(message);
+  const whatsappUrl = buildWhatsAppOrderUrl(message);
 
   closeCountryModal();
-  window.open(whatsappOrder.url, "_blank", "noopener");
-
-  if (whatsappOrder.copiedMessage) {
-    copyOrderMessage(whatsappOrder.copiedMessage);
-  }
+  window.open(whatsappUrl, "_blank", "noopener");
 }
 
 function closeMenu() {
