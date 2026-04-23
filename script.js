@@ -4,10 +4,219 @@ const CONFIG = {
   cryptoAddress: "0xdc33660ee6335bbe15a7cfd9dbc96c9153a0445a",
 };
 
+const COUNTRIES = [
+  "Afghanistan",
+  "Albania",
+  "Algeria",
+  "Andorra",
+  "Angola",
+  "Antigua and Barbuda",
+  "Argentina",
+  "Armenia",
+  "Australia",
+  "Austria",
+  "Azerbaijan",
+  "Bahamas",
+  "Bahrain",
+  "Bangladesh",
+  "Barbados",
+  "Belarus",
+  "Belgium",
+  "Belize",
+  "Benin",
+  "Bhutan",
+  "Bolivia",
+  "Bosnia and Herzegovina",
+  "Botswana",
+  "Brazil",
+  "Brunei",
+  "Bulgaria",
+  "Burkina Faso",
+  "Burundi",
+  "Cambodia",
+  "Cameroon",
+  "Canada",
+  "Cape Verde",
+  "Central African Republic",
+  "Chad",
+  "Chile",
+  "China",
+  "Colombia",
+  "Comoros",
+  "Costa Rica",
+  "Croatia",
+  "Cuba",
+  "Cyprus",
+  "Czechia",
+  "Denmark",
+  "Djibouti",
+  "Dominica",
+  "Dominican Republic",
+  "DR Congo",
+  "Ecuador",
+  "Egypt",
+  "El Salvador",
+  "Equatorial Guinea",
+  "Eritrea",
+  "Estonia",
+  "Eswatini",
+  "Ethiopia",
+  "Fiji",
+  "Finland",
+  "France",
+  "Gabon",
+  "Gambia",
+  "Georgia",
+  "Germany",
+  "Ghana",
+  "Greece",
+  "Grenada",
+  "Guatemala",
+  "Guinea",
+  "Guinea-Bissau",
+  "Guyana",
+  "Haiti",
+  "Honduras",
+  "Hungary",
+  "Iceland",
+  "India",
+  "Indonesia",
+  "Iran",
+  "Iraq",
+  "Ireland",
+  "Italy",
+  "Ivory Coast",
+  "Jamaica",
+  "Japan",
+  "Jordan",
+  "Kazakhstan",
+  "Kenya",
+  "Kiribati",
+  "Kosovo",
+  "Kuwait",
+  "Kyrgyzstan",
+  "Laos",
+  "Latvia",
+  "Lebanon",
+  "Lesotho",
+  "Liberia",
+  "Libya",
+  "Liechtenstein",
+  "Lithuania",
+  "Luxembourg",
+  "Madagascar",
+  "Malawi",
+  "Malaysia",
+  "Maldives",
+  "Mali",
+  "Malta",
+  "Marshall Islands",
+  "Mauritania",
+  "Mauritius",
+  "Mexico",
+  "Micronesia",
+  "Moldova",
+  "Monaco",
+  "Mongolia",
+  "Montenegro",
+  "Morocco",
+  "Mozambique",
+  "Myanmar",
+  "Namibia",
+  "Nauru",
+  "Nepal",
+  "Netherlands",
+  "New Zealand",
+  "Nicaragua",
+  "Niger",
+  "Nigeria",
+  "North Korea",
+  "North Macedonia",
+  "Norway",
+  "Oman",
+  "Pakistan",
+  "Palau",
+  "Palestine",
+  "Panama",
+  "Papua New Guinea",
+  "Paraguay",
+  "Peru",
+  "Philippines",
+  "Poland",
+  "Portugal",
+  "Qatar",
+  "Republic of the Congo",
+  "Romania",
+  "Russia",
+  "Rwanda",
+  "Saint Kitts and Nevis",
+  "Saint Lucia",
+  "Saint Vincent and the Grenadines",
+  "Samoa",
+  "San Marino",
+  "Sao Tome and Principe",
+  "Saudi Arabia",
+  "Senegal",
+  "Serbia",
+  "Seychelles",
+  "Sierra Leone",
+  "Singapore",
+  "Slovakia",
+  "Slovenia",
+  "Solomon Islands",
+  "Somalia",
+  "South Africa",
+  "South Korea",
+  "South Sudan",
+  "Spain",
+  "Sri Lanka",
+  "Sudan",
+  "Suriname",
+  "Sweden",
+  "Switzerland",
+  "Syria",
+  "Tajikistan",
+  "Tanzania",
+  "Thailand",
+  "Timor-Leste",
+  "Togo",
+  "Tonga",
+  "Trinidad and Tobago",
+  "Tunisia",
+  "Turkey",
+  "Turkmenistan",
+  "Tuvalu",
+  "Uganda",
+  "Ukraine",
+  "United Arab Emirates",
+  "United Kingdom",
+  "United States",
+  "Uruguay",
+  "Uzbekistan",
+  "Vanuatu",
+  "Vatican City",
+  "Venezuela",
+  "Vietnam",
+  "Yemen",
+  "Zambia",
+  "Zimbabwe",
+];
+
 const translations = {
   en: {
     "brand.name": "StreamMint",
     "brand.subtitle": "Spotify plan ordering",
+    "country.kicker": "Order details",
+    "country.title": "Choose your country",
+    "country.text":
+      "Select your country, then continue directly to WhatsApp with your request ready to send.",
+    "country.requestLabel": "Selected request",
+    "country.searchLabel": "Search country",
+    "country.searchPlaceholder": "Type a country name",
+    "country.selectLabel": "Country",
+    "country.chooseOption": "Select a country",
+    "country.noResults": "No countries found",
+    "country.cta": "Continue to WhatsApp",
     "nav.plans": "Plans",
     "nav.savings": "Savings",
     "nav.benefits": "Benefits",
@@ -54,6 +263,13 @@ const translations = {
     "plans.twoYears.feature3": "Warranty support included",
     "plans.twoYears.feature4": "Priority ordering on WhatsApp",
     "plans.twoYears.cta": "Order 2-year plan",
+    "request.general": "Spotify order",
+    "request.oneYear": "1-year Spotify plan",
+    "request.twoYears": "2-year Spotify plan",
+    "request.twoAccounts": "2 Spotify accounts order",
+    "request.threeAccounts": "3 Spotify accounts order",
+    "request.paypal": "PayPal payment request",
+    "request.bankTransfer": "instant bank transfer request",
     "savings.kicker": "Bulk savings",
     "savings.title": "Buy more accounts and reduce the total price",
     "savings.text":
@@ -159,10 +375,24 @@ const translations = {
     "floating.cta": "Order on WhatsApp",
     "alerts.copySuccess": "Wallet address copied.",
     "alerts.copyFallback": "Copy this wallet address:",
+    "alerts.chooseCountry": "Please choose a country before continuing.",
+    "order.message":
+      "Hello, I want to order the {{request}}. Country: {{country}}.",
   },
   fr: {
     "brand.name": "StreamMint",
     "brand.subtitle": "Commande de forfaits Spotify",
+    "country.kicker": "Details de commande",
+    "country.title": "Choisissez votre pays",
+    "country.text":
+      "Selectionnez votre pays, puis continuez directement sur WhatsApp avec votre demande prete a envoyer.",
+    "country.requestLabel": "Demande selectionnee",
+    "country.searchLabel": "Rechercher un pays",
+    "country.searchPlaceholder": "Tapez un nom de pays",
+    "country.selectLabel": "Pays",
+    "country.chooseOption": "Choisissez un pays",
+    "country.noResults": "Aucun pays trouve",
+    "country.cta": "Continuer vers WhatsApp",
     "nav.plans": "Offres",
     "nav.savings": "Promos",
     "nav.benefits": "Avantages",
@@ -209,6 +439,13 @@ const translations = {
     "plans.twoYears.feature3": "Assistance garantie incluse",
     "plans.twoYears.feature4": "Commande prioritaire sur WhatsApp",
     "plans.twoYears.cta": "Commander 2 ans",
+    "request.general": "commande Spotify",
+    "request.oneYear": "forfait Spotify 1 an",
+    "request.twoYears": "forfait Spotify 2 ans",
+    "request.twoAccounts": "commande de 2 comptes Spotify",
+    "request.threeAccounts": "commande de 3 comptes Spotify",
+    "request.paypal": "demande de paiement PayPal",
+    "request.bankTransfer": "demande de virement instantane",
     "savings.kicker": "Remises groupe",
     "savings.title": "Achetez plusieurs comptes et reduisez le prix total",
     "savings.text":
@@ -315,10 +552,14 @@ const translations = {
     "floating.cta": "Commander sur WhatsApp",
     "alerts.copySuccess": "Adresse du wallet copiee.",
     "alerts.copyFallback": "Copiez cette adresse :",
+    "alerts.chooseCountry": "Veuillez choisir un pays avant de continuer.",
+    "order.message":
+      "Bonjour, je veux commander {{request}}. Pays : {{country}}.",
   },
 };
 
 let currentLanguage = "en";
+let pendingOrderType = "general";
 
 const siteHeader = document.querySelector(".site-header");
 const menuToggle = document.querySelector("[data-menu-toggle]");
@@ -326,8 +567,15 @@ const langButtons = document.querySelectorAll("[data-lang]");
 const orderButtons = document.querySelectorAll("[data-order]");
 const copyButtons = document.querySelectorAll("[data-copy-address]");
 const translatableNodes = document.querySelectorAll("[data-i18n]");
+const placeholderNodes = document.querySelectorAll("[data-i18n-placeholder]");
 const walletNodes = document.querySelectorAll("[data-address]");
 const headerNavLinks = document.querySelectorAll(".desktop-nav a");
+const countryModal = document.querySelector("[data-country-modal]");
+const countrySearch = document.querySelector("[data-country-search]");
+const countrySelect = document.querySelector("[data-country-select]");
+const countryConfirm = document.querySelector("[data-country-confirm]");
+const countryRequestOutput = document.querySelector("[data-country-request]");
+const countryCloseButtons = document.querySelectorAll("[data-country-close]");
 
 function translatePage(language) {
   currentLanguage = language;
@@ -344,13 +592,111 @@ function translatePage(language) {
     node.textContent = value;
   });
 
+  placeholderNodes.forEach((node) => {
+    const key = node.dataset.i18nPlaceholder;
+    const value = translations[language][key];
+
+    if (!value) {
+      return;
+    }
+
+    node.setAttribute("placeholder", value);
+  });
+
   langButtons.forEach((button) => {
     button.classList.toggle("active", button.dataset.lang === language);
   });
+
+  updateCountryRequest();
+  populateCountryOptions(countrySearch ? countrySearch.value : "");
+}
+
+function getRequestLabel(orderType) {
+  return translations[currentLanguage][`request.${orderType}`] || translations[currentLanguage]["request.general"];
+}
+
+function updateCountryRequest() {
+  if (!countryRequestOutput) {
+    return;
+  }
+
+  countryRequestOutput.textContent = getRequestLabel(pendingOrderType);
+}
+
+function populateCountryOptions(filter = "") {
+  if (!countrySelect) {
+    return;
+  }
+
+  const normalizedFilter = filter.trim().toLowerCase();
+  const currentValue = countrySelect.value;
+  const matchingCountries = COUNTRIES.filter((country) => country.toLowerCase().includes(normalizedFilter));
+  const placeholder = translations[currentLanguage]["country.chooseOption"];
+  const noResults = translations[currentLanguage]["country.noResults"];
+
+  countrySelect.innerHTML = "";
+
+  const defaultOption = document.createElement("option");
+  defaultOption.value = "";
+  defaultOption.textContent = matchingCountries.length ? placeholder : noResults;
+  countrySelect.appendChild(defaultOption);
+
+  matchingCountries.forEach((country) => {
+    const option = document.createElement("option");
+    option.value = country;
+    option.textContent = country;
+    countrySelect.appendChild(option);
+  });
+
+  if (matchingCountries.includes(currentValue)) {
+    countrySelect.value = currentValue;
+  } else {
+    countrySelect.value = "";
+  }
+}
+
+function openCountryModal(orderType) {
+  if (!countryModal) {
+    return;
+  }
+
+  pendingOrderType = orderType || "general";
+  updateCountryRequest();
+  if (countrySearch) {
+    countrySearch.value = "";
+  }
+  populateCountryOptions();
+  countryModal.classList.add("is-open");
+  countryModal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("modal-open");
+  closeMenu();
+}
+
+function closeCountryModal() {
+  if (!countryModal) {
+    return;
+  }
+
+  countryModal.classList.remove("is-open");
+  countryModal.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("modal-open");
 }
 
 function handleOrder() {
-  window.open(CONFIG.whatsappLink, "_blank", "noopener");
+  if (!countrySelect || !countrySelect.value) {
+    window.alert(translations[currentLanguage]["alerts.chooseCountry"]);
+    return;
+  }
+
+  const messageTemplate = translations[currentLanguage]["order.message"];
+  const message = messageTemplate
+    .replace("{{request}}", getRequestLabel(pendingOrderType))
+    .replace("{{country}}", countrySelect.value);
+  const separator = CONFIG.whatsappLink.includes("?") ? "&" : "?";
+  const whatsappUrl = `${CONFIG.whatsappLink}${separator}text=${encodeURIComponent(message)}`;
+
+  closeCountryModal();
+  window.open(whatsappUrl, "_blank", "noopener");
 }
 
 function closeMenu() {
@@ -393,7 +739,7 @@ langButtons.forEach((button) => {
 
 orderButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    handleOrder();
+    openCountryModal(button.dataset.order);
   });
 });
 
@@ -408,5 +754,34 @@ headerNavLinks.forEach((link) => {
 if (menuToggle) {
   menuToggle.addEventListener("click", toggleMenu);
 }
+
+if (countrySearch) {
+  countrySearch.addEventListener("input", () => {
+    populateCountryOptions(countrySearch.value);
+  });
+}
+
+if (countrySelect) {
+  countrySelect.addEventListener("change", () => {
+    if (countrySelect.value) {
+      handleOrder();
+    }
+  });
+}
+
+if (countryConfirm) {
+  countryConfirm.addEventListener("click", handleOrder);
+}
+
+countryCloseButtons.forEach((button) => {
+  button.addEventListener("click", closeCountryModal);
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeMenu();
+    closeCountryModal();
+  }
+});
 
 translatePage(currentLanguage);

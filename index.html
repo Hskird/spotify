@@ -207,7 +207,7 @@
                 <li data-i18n="savings.card1.line2">2-year total: $84 instead of $100</li>
                 <li data-i18n="savings.card1.line3">Perfect for two accounts ordered together</li>
               </ul>
-              <button class="primary-btn full-width" data-order="general" type="button" data-i18n="savings.card1.cta">
+              <button class="primary-btn full-width" data-order="twoAccounts" type="button" data-i18n="savings.card1.cta">
                 Order 2 accounts
               </button>
             </article>
@@ -220,7 +220,7 @@
                 <li data-i18n="savings.card2.line2">2-year total: $120 instead of $150</li>
                 <li data-i18n="savings.card2.line3">The best discount for a small group order</li>
               </ul>
-              <button class="primary-btn full-width" data-order="general" type="button" data-i18n="savings.card2.cta">
+              <button class="primary-btn full-width" data-order="threeAccounts" type="button" data-i18n="savings.card2.cta">
                 Order 3 accounts
               </button>
             </article>
@@ -371,7 +371,7 @@
                   PayPal payment details are shared directly on WhatsApp after your order is confirmed.
                 </p>
               </div>
-              <button class="ghost-btn inline-btn" data-order="general" type="button" data-i18n="payments.paypal.cta">
+              <button class="ghost-btn inline-btn" data-order="paypal" type="button" data-i18n="payments.paypal.cta">
                 Request PayPal details
               </button>
             </article>
@@ -382,7 +382,7 @@
               <p data-i18n="payments.transfer.text">
                 Bank transfer details are shared directly on WhatsApp once the order is confirmed.
               </p>
-              <button class="ghost-btn inline-btn" data-order="general" type="button" data-i18n="payments.transfer.cta">
+              <button class="ghost-btn inline-btn" data-order="bankTransfer" type="button" data-i18n="payments.transfer.cta">
                 Request transfer details
               </button>
             </article>
@@ -460,6 +460,42 @@
           Independent seller. This website is not affiliated with or endorsed by Spotify.
         </p>
       </footer>
+    </div>
+
+    <div class="country-modal" aria-hidden="true" data-country-modal>
+      <div class="country-backdrop" data-country-close></div>
+      <div class="country-dialog" role="dialog" aria-modal="true" aria-labelledby="country-title">
+        <button class="country-close" type="button" aria-label="Close" data-country-close>&times;</button>
+        <p class="section-kicker" data-i18n="country.kicker">Order details</p>
+        <h2 id="country-title" data-i18n="country.title">Choose your country</h2>
+        <p class="country-text" data-i18n="country.text">
+          Select your country, then continue directly to WhatsApp with your request ready to send.
+        </p>
+        <p class="country-request">
+          <span data-i18n="country.requestLabel">Selected request</span>
+          <strong data-country-request>1 Year</strong>
+        </p>
+
+        <label class="country-field">
+          <span data-i18n="country.searchLabel">Search country</span>
+          <input
+            class="country-input"
+            type="search"
+            placeholder="Type a country name"
+            data-i18n-placeholder="country.searchPlaceholder"
+            data-country-search
+          />
+        </label>
+
+        <label class="country-field">
+          <span data-i18n="country.selectLabel">Country</span>
+          <select class="country-select" data-country-select></select>
+        </label>
+
+        <button class="primary-btn full-width" type="button" data-country-confirm data-i18n="country.cta">
+          Continue to WhatsApp
+        </button>
+      </div>
     </div>
 
     <script src="script.js"></script>
