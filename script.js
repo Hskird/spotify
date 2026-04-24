@@ -1,10 +1,10 @@
 const CONFIG = {
-  brandName: "StreamMint",
+  brandName: "Subsaver",
   whatsappLink: "https://wa.me/15142196136",
   cryptoAddress: "0xdc33660ee6335bbe15a7cfd9dbc96c9153a0445a",
 };
 
-const LANGUAGE_STORAGE_KEY = "streammint-language";
+const LANGUAGE_STORAGE_KEY = "subsaver-language";
 
 const currencyBindings = [
   { selector: '[data-i18n="hero.comparison"]', key: "hero.comparison" },
@@ -223,7 +223,7 @@ const COUNTRIES = [
 
 const translations = {
   en: {
-    "brand.name": "StreamMint",
+    "brand.name": "Subsaver",
     "brand.subtitle": "Spotify plan ordering",
     "country.kicker": "Order details",
     "country.title": "Choose your country",
@@ -389,7 +389,7 @@ const translations = {
     "faq.q3.title": "Which payment methods do you accept?",
     "faq.q3.text":
       "PayPal, instant bank transfer, and crypto are available. Confirm your preferred method on WhatsApp before paying.",
-    "footer.brand": "StreamMint",
+    "footer.brand": "Subsaver",
     "footer.text": "Professional ordering page with direct contact and clear pricing.",
     "footer.disclaimer": "Independent seller. This website is not affiliated with or endorsed by Spotify.",
     "floating.text": "Ready to order?",
@@ -404,7 +404,7 @@ const translations = {
       "Hello, I want to order the {{request}}. Country: {{country}}.",
   },
   fr: {
-    "brand.name": "StreamMint",
+    "brand.name": "Subsaver",
     "brand.subtitle": "Commande de forfaits Spotify",
     "country.kicker": "Détails de commande",
     "country.title": "Choisissez votre pays",
@@ -570,7 +570,7 @@ const translations = {
     "faq.q3.title": "Quels moyens de paiement acceptez-vous ?",
     "faq.q3.text":
       "PayPal, virement instantané et crypto sont disponibles. Confirmez votre méthode préférée sur WhatsApp avant de payer.",
-    "footer.brand": "StreamMint",
+    "footer.brand": "Subsaver",
     "footer.text": "Page de commande professionnelle avec contact direct et prix clairs.",
     "footer.disclaimer":
       "Vendeur indépendant. Ce site n'est pas affilié à Spotify et n'est pas approuvé par Spotify.",
