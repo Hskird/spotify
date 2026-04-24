@@ -391,8 +391,6 @@ const translations = {
       "PayPal, instant bank transfer, and crypto are available. Confirm your preferred method on WhatsApp before paying.",
     "footer.brand": "Subsaver",
     "footer.text": "Professional ordering page with direct contact and clear pricing.",
-    "footer.instagramLabel": "Instagram",
-    "footer.instagramHandle": "@subsaver.online",
     "footer.disclaimer": "Independent seller. This website is not affiliated with or endorsed by Spotify.",
     "floating.text": "Ready to order?",
     "floating.cta": "Order on WhatsApp",
@@ -574,8 +572,6 @@ const translations = {
       "PayPal, virement instantané et crypto sont disponibles. Confirmez votre méthode préférée sur WhatsApp avant de payer.",
     "footer.brand": "Subsaver",
     "footer.text": "Page de commande professionnelle avec contact direct et prix clairs.",
-    "footer.instagramLabel": "Instagram",
-    "footer.instagramHandle": "@subsaver.online",
     "footer.disclaimer":
       "Vendeur indépendant. Ce site n'est pas affilié à Spotify et n'est pas approuvé par Spotify.",
     "floating.text": "Prêt à commander ?",
