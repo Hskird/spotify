@@ -4,6 +4,25 @@ const CONFIG = {
   cryptoAddress: "0xdc33660ee6335bbe15a7cfd9dbc96c9153a0445a",
 };
 
+const LANGUAGE_STORAGE_KEY = "streammint-language";
+
+const currencyBindings = [
+  { selector: '[data-i18n="hero.comparison"]', key: "hero.comparison" },
+  { selector: '[data-i18n="heroPanel.title"]', key: "heroPanel.title" },
+  { selector: '[data-i18n="pricing.oneYear"]', key: "pricing.oneYear" },
+  { selector: '[data-i18n="pricing.twoYears"]', key: "pricing.twoYears" },
+  { selector: '[data-i18n="plans.oneYear.savings"]', key: "plans.oneYear.savings" },
+  { selector: '[data-i18n="plans.twoYears.savings"]', key: "plans.twoYears.savings" },
+  { selector: '[data-i18n="savings.card1.line1"]', key: "savings.card1.line1" },
+  { selector: '[data-i18n="savings.card1.line2"]', key: "savings.card1.line2" },
+  { selector: '[data-i18n="savings.card2.line1"]', key: "savings.card2.line1" },
+  { selector: '[data-i18n="savings.card2.line2"]', key: "savings.card2.line2" },
+  { selector: '[data-i18n="savings.card3.line1"]', key: "savings.card3.line1" },
+  { selector: '[data-i18n="savings.card3.line2"]', key: "savings.card3.line2" },
+  { selector: '[data-i18n="savings.card3.line3"]', key: "savings.card3.line3" },
+  { selector: '[data-i18n="savings.card3.footnote"]', key: "savings.card3.footnote" },
+];
+
 const COUNTRIES = [
   "Afghanistan",
   "Albania",
@@ -568,7 +587,16 @@ const translations = {
   },
 };
 
-let currentLanguage = "en";
+function getStoredLanguage() {
+  try {
+    const storedLanguage = window.localStorage.getItem(LANGUAGE_STORAGE_KEY);
+    return storedLanguage && translations[storedLanguage] ? storedLanguage : "en";
+  } catch (error) {
+    return "en";
+  }
+}
+
+let currentLanguage = getStoredLanguage();
 let pendingOrderType = "general";
 
 const siteHeader = document.querySelector(".site-header");
@@ -587,13 +615,30 @@ const countryConfirm = document.querySelector("[data-country-confirm]");
 const countryRequestOutput = document.querySelector("[data-country-request]");
 const countryCloseButtons = document.querySelectorAll("[data-country-close]");
 
+function applyCurrencyContent(language) {
+  currencyBindings.forEach(({ selector, key }) => {
+    const value = translations[language][key];
+
+    if (!value) {
+      return;
+    }
+
+    document.querySelectorAll(selector).forEach((node) => {
+      node.textContent = value;
+    });
+  });
+}
+
 function translatePage(language) {
-  currentLanguage = language;
-  document.documentElement.lang = language;
+  const targetLanguage = translations[language] ? language : "en";
+
+  currentLanguage = targetLanguage;
+  document.documentElement.lang = targetLanguage;
+  document.documentElement.dataset.language = targetLanguage;
 
   translatableNodes.forEach((node) => {
     const key = node.dataset.i18n;
-    const value = translations[language][key];
+    const value = translations[targetLanguage][key];
 
     if (!value) {
       return;
@@ -604,7 +649,7 @@ function translatePage(language) {
 
   placeholderNodes.forEach((node) => {
     const key = node.dataset.i18nPlaceholder;
-    const value = translations[language][key];
+    const value = translations[targetLanguage][key];
 
     if (!value) {
       return;
@@ -614,11 +659,18 @@ function translatePage(language) {
   });
 
   langButtons.forEach((button) => {
-    button.classList.toggle("active", button.dataset.lang === language);
+    button.classList.toggle("active", button.dataset.lang === targetLanguage);
   });
 
+  applyCurrencyContent(targetLanguage);
   updateCountryRequest();
   populateCountryOptions();
+
+  try {
+    window.localStorage.setItem(LANGUAGE_STORAGE_KEY, targetLanguage);
+  } catch (error) {
+    // Ignore storage failures and keep the current in-memory language.
+  }
 }
 
 function getRequestLabel(orderType) {
