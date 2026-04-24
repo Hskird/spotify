@@ -1,6 +1,6 @@
 const CONFIG = {
   brandName: "StreamMint",
-  whatsappLink: "https://wa.me/212627655225",
+  whatsappLink: "https://wa.me/15142136136",
   cryptoAddress: "0xdc33660ee6335bbe15a7cfd9dbc96c9153a0445a",
 };
 
