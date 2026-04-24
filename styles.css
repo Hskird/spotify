@@ -782,6 +782,67 @@ button {
   padding: 26px 30px;
 }
 
+.footer-main {
+  display: grid;
+  gap: 18px;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  width: fit-content;
+  padding: 14px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at top right, rgba(29, 185, 84, 0.16), transparent 32%),
+    rgba(255, 255, 255, 0.03);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease;
+}
+
+.social-link:hover,
+.social-link:focus-visible {
+  transform: translateY(-1px);
+  border-color: rgba(29, 185, 84, 0.26);
+  background:
+    radial-gradient(circle at top right, rgba(29, 185, 84, 0.2), transparent 32%),
+    rgba(255, 255, 255, 0.05);
+}
+
+.social-icon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  color: #ffffff;
+  background: linear-gradient(135deg, #fd1d1d 0%, #fcb045 45%, #833ab4 100%);
+  box-shadow: 0 10px 20px rgba(131, 58, 180, 0.22);
+}
+
+.social-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.social-copy {
+  display: grid;
+  gap: 4px;
+}
+
+.social-copy span {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.social-copy strong {
+  font-size: 1rem;
+}
+
 .disclaimer {
   max-width: 360px;
   text-align: right;
@@ -1020,6 +1081,15 @@ body.modal-open {
   .process-grid,
   .site-footer {
     grid-template-columns: 1fr;
+  }
+
+  .footer-main {
+    width: 100%;
+  }
+
+  .social-link {
+    width: 100%;
+    justify-content: flex-start;
   }
 
   .language-switch {
