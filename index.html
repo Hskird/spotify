@@ -24,7 +24,7 @@
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20260425-5" />
+    <link rel="stylesheet" href="styles.css?v=20260425-6" />
   </head>
   <body>
     <div class="page-shell">
@@ -103,11 +103,11 @@
             </p>
 
             <div class="hero-savings-banner">
-              <p class="hero-savings-kicker" data-i18n="hero.savingsKicker">Meilleure économie</p>
-              <strong class="hero-savings-value" data-i18n="hero.savingsValue">Économisez jusqu'à 760 DH</strong>
+              <p class="hero-savings-kicker" data-i18n="hero.savingsKicker">Meilleures économies</p>
+              <strong class="hero-savings-value" data-i18n="hero.savingsValue">Jusqu'à 760 DH au Maroc et 261,76 $ à l'international</strong>
               <p class="hero-savings-text" data-i18n="hero.savingsText">
-                Dès l'ouverture, le site montre les tarifs et économies pour les comptes marocains
-                et internationaux.
+                Dès l'ouverture, le site montre les économies Maroc et international face au prix
+                Spotify direct.
               </p>
             </div>
 
@@ -132,15 +132,30 @@
           </div>
 
           <aside class="hero-panel">
-            <div class="panel-card panel-highlight">
-              <p class="panel-label" data-i18n="heroPanel.featured">Meilleure offre</p>
-              <h2 data-i18n="heroPanel.title">2 ans pour 320 DH</h2>
-              <p data-i18n="heroPanel.text">
-                La formule la plus rentable pour ceux qui veulent économiser un maximum sur la durée.
-              </p>
-              <button class="secondary-btn" data-order="twoYears" type="button" data-i18n="heroPanel.cta">
-                Commander 2 ans
-              </button>
+            <div class="featured-offers-grid">
+              <div class="panel-card panel-highlight featured-offer-card morocco-featured-card">
+                <p class="panel-label" data-i18n="heroPanel.moroccoFeatured">Meilleure offre Maroc</p>
+                <h3 data-i18n="heroPanel.moroccoTitle">2 ans Maroc
+320 DH</h3>
+                <p data-i18n="heroPanel.moroccoText">
+                  Jusqu'à 760 DH d'économie sur l'offre marocaine la plus rentable.
+                </p>
+                <button class="secondary-btn" data-order="moroccoTwoYears" type="button" data-i18n="heroPanel.moroccoCta">
+                  Commander 2 ans Maroc
+                </button>
+              </div>
+
+              <div class="panel-card panel-highlight featured-offer-card international-featured-card">
+                <p class="panel-label" data-i18n="heroPanel.internationalFeatured">Meilleure offre international</p>
+                <h3 data-i18n="heroPanel.internationalTitle">2 ans International
+50 $</h3>
+                <p data-i18n="heroPanel.internationalText">
+                  Jusqu'à 261,76 $ d'économie pour EU, US et Canada.
+                </p>
+                <button class="secondary-btn" data-order="intlTwoYears" type="button" data-i18n="heroPanel.internationalCta">
+                  Commander 2 ans international
+                </button>
+              </div>
             </div>
 
             <article class="panel-card market-pricing-card">
@@ -338,46 +353,64 @@
             </p>
           </div>
 
-          <div class="savings-grid">
+          <div class="savings-grid savings-grid-quad">
             <article class="savings-card">
-              <p class="review-label" data-i18n="savings.card1.label">Offre 1 an</p>
-              <h3 data-i18n="savings.card1.title">Une vraie économie sur 1 an</h3>
+              <p class="review-label" data-i18n="savings.card1.label">Maroc 1 an</p>
+              <h3 data-i18n="savings.card1.title">Comparaison Maroc sur 1 an</h3>
               <ul class="savings-list">
                 <li data-i18n="savings.card1.line1">220 DH au lieu de 540 DH</li>
                 <li data-i18n="savings.card1.line2">Économie totale : 320 DH</li>
                 <li data-i18n="savings.card1.line3">Une formule simple, directe et rentable dès le départ</li>
               </ul>
-              <button class="primary-btn full-width" data-order="oneYear" type="button" data-i18n="savings.card1.cta">
-                Commander 1 an
+              <button class="primary-btn full-width" data-order="moroccoOneYear" type="button" data-i18n="savings.card1.cta">
+                Commander 1 an Maroc
               </button>
             </article>
 
             <article class="savings-card featured-savings">
-              <p class="review-label" data-i18n="savings.card2.label">Offre 2 ans</p>
-              <h3 data-i18n="savings.card2.title">L'offre la plus rentable</h3>
+              <p class="review-label" data-i18n="savings.card2.label">Maroc 2 ans</p>
+              <h3 data-i18n="savings.card2.title">La meilleure économie Maroc</h3>
               <ul class="savings-list">
                 <li data-i18n="savings.card2.line1">320 DH au lieu de 1 080 DH</li>
                 <li data-i18n="savings.card2.line2">Économie totale : 760 DH</li>
                 <li data-i18n="savings.card2.line3">Le meilleur tarif pour ceux qui veulent économiser au maximum</li>
               </ul>
-              <button class="primary-btn full-width" data-order="twoYears" type="button" data-i18n="savings.card2.cta">
-                Commander 2 ans
+              <button class="primary-btn full-width" data-order="moroccoTwoYears" type="button" data-i18n="savings.card2.cta">
+                Commander 2 ans Maroc
               </button>
             </article>
 
             <article class="savings-card comparison-card">
-              <p class="review-label" data-i18n="savings.card3.label">Prix Spotify direct</p>
-              <h3 data-i18n="savings.card3.title">Le paiement mensuel revient vite cher</h3>
+              <p class="review-label" data-i18n="savings.card3.label">International 1 an</p>
+              <h3 data-i18n="savings.card3.title">Comparaison internationale sur 1 an</h3>
               <ul class="savings-list">
-                <li data-i18n="savings.card3.line1">Spotify Premium revient à environ 45 DH / mois</li>
-                <li data-i18n="savings.card3.line2">Environ 540 DH sur 12 mois</li>
-                <li data-i18n="savings.card3.line3">Environ 1 080 DH sur 24 mois</li>
+                <li data-i18n="savings.card3.line1">38 $ au lieu d'environ 155,88 $</li>
+                <li data-i18n="savings.card3.line2">Économie totale : 117,88 $</li>
+                <li data-i18n="savings.card3.line3">Une solution directe pour Europe, US et Canada</li>
               </ul>
-              <p class="pricing-footnote" data-i18n="savings.card3.footnote">
-                Tarifs Maroc affichés en dirhams pour la version française.
-              </p>
+              <button class="primary-btn full-width" data-order="intlOneYear" type="button" data-i18n="savings.card3.cta">
+                Commander 1 an international
+              </button>
+            </article>
+
+            <article class="savings-card international-savings-card">
+              <p class="review-label" data-i18n="savings.card4.label">International 2 ans</p>
+              <h3 data-i18n="savings.card4.title">La meilleure économie internationale</h3>
+              <ul class="savings-list">
+                <li data-i18n="savings.card4.line1">50 $ au lieu d'environ 311,76 $</li>
+                <li data-i18n="savings.card4.line2">Économie totale : 261,76 $</li>
+                <li data-i18n="savings.card4.line3">Le meilleur tarif international longue durée</li>
+              </ul>
+              <button class="primary-btn full-width" data-order="intlTwoYears" type="button" data-i18n="savings.card4.cta">
+                Commander 2 ans international
+              </button>
             </article>
           </div>
+
+          <p class="pricing-footnote savings-footnote" data-i18n="savings.footnote">
+            Comparaison Maroc basée sur 45 DH / mois. Comparaison internationale basée sur environ
+            12,99 $ / mois.
+          </p>
         </section>
 
         <section class="benefits-section" id="benefits">
@@ -641,6 +674,6 @@
       </div>
     </div>
 
-    <script src="script.js?v=20260425-5"></script>
+    <script src="script.js?v=20260425-6"></script>
   </body>
 </html>
