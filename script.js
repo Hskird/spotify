@@ -4,24 +4,7 @@ const CONFIG = {
   cryptoAddress: "0xdc33660ee6335bbe15a7cfd9dbc96c9153a0445a",
 };
 
-const LANGUAGE_STORAGE_KEY = "subsaver-language";
-
-const currencyBindings = [
-  { selector: '[data-i18n="hero.comparison"]', key: "hero.comparison" },
-  { selector: '[data-i18n="heroPanel.title"]', key: "heroPanel.title" },
-  { selector: '[data-i18n="pricing.oneYear"]', key: "pricing.oneYear" },
-  { selector: '[data-i18n="pricing.twoYears"]', key: "pricing.twoYears" },
-  { selector: '[data-i18n="plans.oneYear.savings"]', key: "plans.oneYear.savings" },
-  { selector: '[data-i18n="plans.twoYears.savings"]', key: "plans.twoYears.savings" },
-  { selector: '[data-i18n="savings.card1.line1"]', key: "savings.card1.line1" },
-  { selector: '[data-i18n="savings.card1.line2"]', key: "savings.card1.line2" },
-  { selector: '[data-i18n="savings.card2.line1"]', key: "savings.card2.line1" },
-  { selector: '[data-i18n="savings.card2.line2"]', key: "savings.card2.line2" },
-  { selector: '[data-i18n="savings.card3.line1"]', key: "savings.card3.line1" },
-  { selector: '[data-i18n="savings.card3.line2"]', key: "savings.card3.line2" },
-  { selector: '[data-i18n="savings.card3.line3"]', key: "savings.card3.line3" },
-  { selector: '[data-i18n="savings.card3.footnote"]', key: "savings.card3.footnote" },
-];
+const LANGUAGE_STORAGE_KEY = "subsaver-language-v2";
 
 const COUNTRIES = [
   "Afghanistan",
@@ -222,9 +205,192 @@ const COUNTRIES = [
 ];
 
 const translations = {
+  fr: {
+    "brand.name": "Subsaver",
+    "brand.subtitle": "Commande Spotify Premium",
+    "country.kicker": "Détails de commande",
+    "country.title": "Choisissez votre pays",
+    "country.text":
+      "Sélectionnez votre pays puis continuez sur WhatsApp avec votre demande déjà prête.",
+    "country.requestLabel": "Demande sélectionnée",
+    "country.nameLabel": "Votre nom",
+    "country.namePlaceholder": "Entrez votre nom",
+    "country.selectLabel": "Pays",
+    "country.chooseOption": "Choisissez un pays",
+    "country.cta": "Continuer vers WhatsApp",
+    "nav.plans": "Offres",
+    "nav.savings": "Économies",
+    "nav.benefits": "Avantages",
+    "nav.trust": "Pourquoi nous",
+    "nav.payments": "Paiements",
+    "nav.faq": "FAQ",
+    "hero.eyebrow": "Commande sécurisée et support rapide",
+    "hero.title": "Spotify Premium au meilleur tarif au Maroc avec support direct et prix clairs.",
+    "hero.text":
+      "Version française pensée pour le Maroc avec tarifs en dirhams, commande simple sur WhatsApp, paiement flexible et garantie incluse.",
+    "hero.savingsKicker": "Meilleure économie",
+    "hero.savingsValue": "Économisez jusqu'à 760 DH",
+    "hero.savingsText":
+      "Les économies sont visibles dès le premier regard pour montrer tout de suite la différence face au prix Spotify classique.",
+    "hero.primaryCta": "Commander sur WhatsApp",
+    "hero.secondaryCta": "Voir les offres",
+    "hero.comparison":
+      "Au Maroc, Spotify Premium revient à environ 45 DH/mois, soit 540 DH sur 1 an et 1 080 DH sur 2 ans.",
+    "trust.customers": "1 500+ ventes réalisées",
+    "trust.fast": "Réponse rapide",
+    "trust.warranty": "Garantie incluse",
+    "trust.secure": "Commande fiable",
+    "heroPanel.featured": "Meilleure offre",
+    "heroPanel.title": "2 ans pour 320 DH",
+    "heroPanel.text":
+      "La formule la plus rentable pour ceux qui veulent économiser un maximum sur la durée.",
+    "heroPanel.cta": "Commander 2 ans",
+    "heroPanel.priceLabel": "Offre 1 an",
+    "heroPanel.supportLabel": "Commande",
+    "heroPanel.supportValue": "WhatsApp",
+    "pricing.oneYear": "220 DH",
+    "pricing.twoYears": "320 DH",
+    "plans.kicker": "Offres",
+    "plans.title": "Choisissez l'option qui vous convient le mieux",
+    "plans.text":
+      "Des tarifs clairs, une commande directe, et un support disponible pendant toute la période couverte.",
+    "plans.basicBadge": "Option flexible",
+    "plans.featuredBadge": "Meilleur vendeur",
+    "plans.savingsToggle": "Voir combien vous économisez face à Spotify",
+    "plans.oneYear.title": "1 an",
+    "plans.oneYear.oldPrice": "Au lieu de 540 DH",
+    "plans.oneYear.saveBadge": "ÉCONOMISEZ 320 DH",
+    "plans.oneYear.savings": "Vous économisez 320 DH par rapport au prix Spotify sur 1 an.",
+    "plans.oneYear.feature1": "Accès complet pendant 1 an",
+    "plans.oneYear.feature2": "Garantie incluse",
+    "plans.oneYear.feature3": "Commande directe sur WhatsApp",
+    "plans.oneYear.feature4": "Paiement via PayPal, virement ou crypto",
+    "plans.oneYear.cta": "Commander 1 an",
+    "plans.twoYears.title": "2 ans",
+    "plans.twoYears.oldPrice": "Au lieu de 1 080 DH",
+    "plans.twoYears.saveBadge": "ÉCONOMISEZ 760 DH",
+    "plans.twoYears.savings": "Vous économisez 760 DH par rapport au prix Spotify sur 2 ans.",
+    "plans.twoYears.feature1": "Accès complet pendant 2 ans",
+    "plans.twoYears.feature2": "Meilleur tarif longue durée",
+    "plans.twoYears.feature3": "Garantie incluse",
+    "plans.twoYears.feature4": "Support prioritaire sur WhatsApp",
+    "plans.twoYears.cta": "Commander 2 ans",
+    "request.general": "une offre Spotify Premium",
+    "request.oneYear": "le forfait Spotify 1 an",
+    "request.twoYears": "le forfait Spotify 2 ans",
+    "request.paypal": "les détails PayPal",
+    "request.bankTransfer": "les détails de virement instantané",
+    "savings.kicker": "Économies",
+    "savings.title": "Voyez clairement combien vous économisez face à Spotify",
+    "savings.text":
+      "Les économies sont affichées directement pour comparer votre offre longue durée au prix Spotify en un seul regard.",
+    "savings.card1.label": "Offre 1 an",
+    "savings.card1.title": "Une vraie économie sur 1 an",
+    "savings.card1.line1": "220 DH au lieu de 540 DH",
+    "savings.card1.line2": "Économie totale : 320 DH",
+    "savings.card1.line3": "Une formule simple, directe et rentable dès le départ",
+    "savings.card1.cta": "Commander 1 an",
+    "savings.card2.label": "Offre 2 ans",
+    "savings.card2.title": "L'offre la plus rentable",
+    "savings.card2.line1": "320 DH au lieu de 1 080 DH",
+    "savings.card2.line2": "Économie totale : 760 DH",
+    "savings.card2.line3": "Le meilleur tarif pour ceux qui veulent économiser au maximum",
+    "savings.card2.cta": "Commander 2 ans",
+    "savings.card3.label": "Prix Spotify direct",
+    "savings.card3.title": "Le paiement mensuel revient vite cher",
+    "savings.card3.line1": "Spotify Premium revient à environ 45 DH / mois",
+    "savings.card3.line2": "Environ 540 DH sur 12 mois",
+    "savings.card3.line3": "Environ 1 080 DH sur 24 mois",
+    "savings.card3.footnote": "Tarifs Maroc affichés en dirhams pour la version française.",
+    "benefits.kicker": "Avantages Premium",
+    "benefits.title": "Tout ce que les gens veulent d'une vraie expérience Premium",
+    "benefits.text":
+      "Sans pub, plus de liberté et une écoute plus confortable au quotidien.",
+    "benefits.card1.label": "Sans publicité",
+    "benefits.card1.title": "Profitez de vos playlists sans interruption",
+    "benefits.card1.text":
+      "Écoutez votre musique plus confortablement avec une expérience fluide et sans coupure publicitaire.",
+    "benefits.card2.label": "Qualité audio",
+    "benefits.card2.title": "Une meilleure qualité d'écoute",
+    "benefits.card2.text":
+      "Profitez davantage de vos playlists avec une expérience audio plus agréable au quotidien.",
+    "benefits.card3.label": "Hors ligne",
+    "benefits.card3.title": "Gardez votre musique partout avec vous",
+    "benefits.card3.text":
+      "Écoutez plus facilement vos morceaux quand vous voulez sans dépendre de votre connexion.",
+    "benefits.card4.label": "Liberté",
+    "benefits.card4.title": "Plus de contrôle, plus de confort",
+    "benefits.card4.text":
+      "Passez, lancez et profitez de votre musique avec moins de limites et plus de liberté.",
+    "process.kicker": "Fonctionnement",
+    "process.title": "Une commande simple du message à la confirmation",
+    "process.step1.title": "Choisissez votre offre",
+    "process.step1.text": "Sélectionnez la formule 1 an ou 2 ans selon votre besoin.",
+    "process.step2.title": "Envoyez votre message sur WhatsApp",
+    "process.step2.text": "Indiquez l'offre voulue et votre pays pour confirmer rapidement la commande.",
+    "process.step3.title": "Payez avec la méthode voulue",
+    "process.step3.text": "PayPal, virement instantané ou crypto après confirmation.",
+    "process.step4.title": "Recevez le support",
+    "process.step4.text": "Le support reste disponible pendant la période couverte si nécessaire.",
+    "trustSection.kicker": "Pourquoi nous choisir",
+    "trustSection.title": "Une expérience de commande simple, sérieuse et fiable",
+    "trustSection.text":
+      "Le service est pensé pour garder la commande claire, la communication directe et le support disponible.",
+    "trustSection.card1.label": "Réponse rapide",
+    "trustSection.card1.title": "Contact direct sur WhatsApp",
+    "trustSection.card1.text":
+      "Les échanges restent simples, rapides et directs pour confirmer la commande sans perte de temps.",
+    "trustSection.card2.label": "Commande claire",
+    "trustSection.card2.title": "Des étapes simples avant paiement",
+    "trustSection.card2.text":
+      "Les détails de paiement sont confirmés après discussion pour garder un processus propre et organisé.",
+    "trustSection.card3.label": "Garantie",
+    "trustSection.card3.title": "Support pendant la durée couverte",
+    "trustSection.card3.text":
+      "Si vous avez besoin d'assistance pendant la période active, le support reste disponible sur WhatsApp.",
+    "payments.kicker": "Paiements",
+    "payments.title": "Moyens de paiement flexibles",
+    "payments.text":
+      "Payez avec la méthode qui vous convient: PayPal, virement instantané, banques marocaines ou crypto.",
+    "payments.paypal.title": "Payer avec PayPal",
+    "payments.paypal.text":
+      "Les détails PayPal sont envoyés directement sur WhatsApp après confirmation de votre commande.",
+    "payments.paypal.cta": "Demander les détails PayPal",
+    "payments.transfer.kicker": "Virement",
+    "payments.transfer.title": "Virement instantané",
+    "payments.transfer.text":
+      "Les coordonnées de paiement sont partagées directement sur WhatsApp une fois la commande confirmée.",
+    "payments.transfer.cta": "Demander les coordonnées",
+    "payments.crypto.kicker": "Crypto",
+    "payments.crypto.title": "Adresse de paiement crypto",
+    "payments.crypto.text":
+      "La même adresse est utilisée pour l'USDT sur Ethereum et sur BSC BEP20. Vérifiez toujours le réseau avant envoi.",
+    "payments.crypto.copy": "Copier",
+    "faq.kicker": "FAQ",
+    "faq.title": "Questions fréquentes",
+    "faq.q1.title": "Comment passer commande ?",
+    "faq.q1.text":
+      "Cliquez sur un bouton de commande, choisissez votre pays, puis continuez sur WhatsApp avec votre demande déjà préparée.",
+    "faq.q2.title": "Que veut dire la garantie ?",
+    "faq.q2.text":
+      "Si un problème arrive pendant la période couverte, contactez-nous sur WhatsApp pour recevoir de l'aide.",
+    "faq.q3.title": "Quels moyens de paiement acceptez-vous ?",
+    "faq.q3.text":
+      "PayPal, virement instantané et crypto sont disponibles. Confirmez votre méthode préférée sur WhatsApp avant de payer.",
+    "footer.brand": "Subsaver",
+    "footer.text": "Page de commande professionnelle avec contact direct et prix clairs.",
+    "footer.disclaimer": "Vendeur indépendant. Ce site n'est pas affilié à Spotify et n'est pas approuvé par Spotify.",
+    "alerts.copySuccess": "Adresse du wallet copiée.",
+    "alerts.copyFallback": "Copiez cette adresse :",
+    "alerts.chooseCountry": "Veuillez choisir un pays avant de continuer.",
+    "order.messageWithName":
+      "Bonjour, je m'appelle {{name}}. Je veux commander {{request}}. Pays : {{country}}.",
+    "order.messageWithoutName":
+      "Bonjour, je veux commander {{request}}. Pays : {{country}}.",
+  },
   en: {
     "brand.name": "Subsaver",
-    "brand.subtitle": "Spotify plan ordering",
+    "brand.subtitle": "Spotify Premium ordering",
     "country.kicker": "Order details",
     "country.title": "Choose your country",
     "country.text":
@@ -234,7 +400,6 @@ const translations = {
     "country.namePlaceholder": "Enter your name",
     "country.selectLabel": "Country",
     "country.chooseOption": "Select a country",
-    "country.noResults": "No countries found",
     "country.cta": "Continue to WhatsApp",
     "nav.plans": "Plans",
     "nav.savings": "Savings",
@@ -242,82 +407,88 @@ const translations = {
     "nav.trust": "Why us",
     "nav.payments": "Payments",
     "nav.faq": "FAQ",
-    "hero.eyebrow": "Secure ordering and fast support",
-    "hero.title": "Long-term Spotify plans with direct support and clear pricing.",
+    "hero.eyebrow": "Direct ordering and fast support",
+    "hero.title": "Spotify Premium plans with direct support and clear dollar pricing.",
     "hero.text":
-      "Pay once, order in minutes, and enjoy a smooth Premium experience with direct WhatsApp ordering, flexible payment methods, and warranty support.",
+      "The international version keeps the original pricing for US, Canada, and Europe, with direct WhatsApp ordering and support included.",
+    "hero.savingsKicker": "Best savings",
+    "hero.savingsValue": "Save up to $261.76",
+    "hero.savingsText":
+      "International pricing keeps the original $38 / $50 offer for US, Canada, and Europe.",
     "hero.primaryCta": "Order on WhatsApp",
     "hero.secondaryCta": "View plans",
     "hero.comparison":
-      "Spotify Premium Individual in the US is $12.99/month as of April 23, 2026. That is about $155.88 over 12 months.",
+      "For US, Canada, and Europe, Spotify Premium Individual is about $12.99/month, or around $155.88 per year and $311.76 over 24 months.",
     "trust.customers": "1,500+ sales completed",
     "trust.fast": "Fast reply",
     "trust.warranty": "Warranty included",
     "trust.secure": "Trusted ordering experience",
     "heroPanel.featured": "Popular choice",
     "heroPanel.title": "2 years for $50",
-    "heroPanel.text": "The best value plan with support included and direct WhatsApp ordering.",
+    "heroPanel.text":
+      "The best long-term value for international buyers who want the strongest total savings.",
     "heroPanel.cta": "Order 2-year plan",
     "heroPanel.priceLabel": "1-year plan",
-    "pricing.oneYear": "$38",
-    "pricing.twoYears": "$50",
     "heroPanel.supportLabel": "Ordering",
     "heroPanel.supportValue": "WhatsApp",
+    "pricing.oneYear": "$38",
+    "pricing.twoYears": "$50",
     "plans.kicker": "Plans",
     "plans.title": "Choose the option that fits you best",
     "plans.text":
-      "One clear price, direct ordering, and support included for the covered period.",
+      "Clear pricing, direct ordering, and support included for the covered period.",
     "plans.basicBadge": "Flexible option",
     "plans.featuredBadge": "Best seller",
     "plans.savingsToggle": "See how much you save vs Spotify",
     "plans.oneYear.title": "1 Year",
-    "plans.oneYear.savings": "You save about $117.88 vs Spotify over 12 months.",
+    "plans.oneYear.oldPrice": "Instead of $155.88",
+    "plans.oneYear.saveBadge": "SAVE $117.88",
+    "plans.oneYear.savings": "You save $117.88 versus Spotify over 12 months.",
     "plans.oneYear.feature1": "1 full year access",
     "plans.oneYear.feature2": "Warranty support included",
     "plans.oneYear.feature3": "Order directly on WhatsApp",
     "plans.oneYear.feature4": "Pay with PayPal, transfer, or crypto",
     "plans.oneYear.cta": "Order 1-year plan",
     "plans.twoYears.title": "2 Years",
-    "plans.twoYears.savings": "You save about $261.76 vs Spotify over 24 months.",
+    "plans.twoYears.oldPrice": "Instead of $311.76",
+    "plans.twoYears.saveBadge": "SAVE $261.76",
+    "plans.twoYears.savings": "You save $261.76 versus Spotify over 24 months.",
     "plans.twoYears.feature1": "2 full years access",
     "plans.twoYears.feature2": "Best long-term price",
     "plans.twoYears.feature3": "Warranty support included",
     "plans.twoYears.feature4": "Priority ordering on WhatsApp",
     "plans.twoYears.cta": "Order 2-year plan",
-    "request.general": "Spotify order",
-    "request.oneYear": "1-year Spotify plan",
-    "request.twoYears": "2-year Spotify plan",
-    "request.twoAccounts": "2 Spotify accounts order",
-    "request.threeAccounts": "3 Spotify accounts order",
-    "request.paypal": "PayPal payment request",
-    "request.bankTransfer": "instant bank transfer request",
-    "savings.kicker": "Bulk savings",
-    "savings.title": "Buy more accounts and reduce the total price",
+    "request.general": "a Spotify Premium plan",
+    "request.oneYear": "the 1-year Spotify plan",
+    "request.twoYears": "the 2-year Spotify plan",
+    "request.paypal": "PayPal payment details",
+    "request.bankTransfer": "instant bank transfer details",
+    "savings.kicker": "Savings",
+    "savings.title": "See clearly how much you save versus Spotify",
     "savings.text":
-      "Multi-account discounts are applied to the total amount, making larger orders even more attractive.",
-    "savings.card1.label": "2 accounts",
-    "savings.card1.title": "Get 16% off the total amount",
-    "savings.card1.line1": "1-year total: $63.84 instead of $76",
-    "savings.card1.line2": "2-year total: $84 instead of $100",
-    "savings.card1.line3": "Perfect for two accounts ordered together",
-    "savings.card1.cta": "Order 2 accounts",
-    "savings.card2.label": "3 accounts",
-    "savings.card2.title": "Get 20% off the total amount",
-    "savings.card2.line1": "1-year total: $91.20 instead of $114",
-    "savings.card2.line2": "2-year total: $120 instead of $150",
-    "savings.card2.line3": "The best discount for a small group order",
-    "savings.card2.cta": "Order 3 accounts",
+      "The savings are shown directly so people can compare your long-term offer with Spotify monthly billing in one glance.",
+    "savings.card1.label": "1 year offer",
+    "savings.card1.title": "Clear yearly savings",
+    "savings.card1.line1": "Pay $38 instead of about $155.88",
+    "savings.card1.line2": "Save $117.88 over 12 months",
+    "savings.card1.line3": "A simple one-payment option with direct support included",
+    "savings.card1.cta": "Order 1-year plan",
+    "savings.card2.label": "2 years offer",
+    "savings.card2.title": "The strongest total savings",
+    "savings.card2.line1": "Pay $50 instead of about $311.76",
+    "savings.card2.line2": "Save $261.76 over 24 months",
+    "savings.card2.line3": "Best for long-term buyers who want the lowest total cost",
+    "savings.card2.cta": "Order 2-year plan",
     "savings.card3.label": "Spotify direct price",
-    "savings.card3.title": "Monthly billing adds up quickly over time",
-    "savings.card3.line1": "Spotify Premium Individual: $12.99/month in the US",
+    "savings.card3.title": "Monthly billing becomes expensive over time",
+    "savings.card3.line1": "Spotify Premium Individual: about $12.99/month",
     "savings.card3.line2": "About $155.88 for 12 months",
     "savings.card3.line3": "About $311.76 for 24 months",
-    "savings.card3.footnote":
-      "Comparison based on Spotify US Premium Individual pricing checked on April 23, 2026.",
+    "savings.card3.footnote": "International pricing shown in dollars for US, Canada, and Europe.",
     "benefits.kicker": "Premium benefits",
     "benefits.title": "Everything people want from a Premium listening experience",
     "benefits.text":
-      "These are the everyday features that make Premium more comfortable, flexible, and enjoyable.",
+      "Ad-free listening, more control, and a smoother everyday experience.",
     "benefits.card1.label": "Ad-free",
     "benefits.card1.title": "Enjoy music without interruptions",
     "benefits.card1.text":
@@ -339,7 +510,7 @@ const translations = {
     "process.step1.title": "Choose your plan",
     "process.step1.text": "Pick the 1-year or 2-year option that suits you.",
     "process.step2.title": "Send a WhatsApp message",
-    "process.step2.text": "Tell me which plan you want and I will confirm the order.",
+    "process.step2.text": "Tell us which plan you want and which country you are ordering from.",
     "process.step3.title": "Pay with your preferred method",
     "process.step3.text": "Use PayPal, instant bank transfer, or crypto after confirmation.",
     "process.step4.title": "Receive support",
@@ -382,7 +553,7 @@ const translations = {
     "faq.title": "Frequently asked questions",
     "faq.q1.title": "How do I place an order?",
     "faq.q1.text":
-      "Click any WhatsApp order button, send your selected plan, and you will receive the next steps directly in chat.",
+      "Click any order button, choose your country, and continue to WhatsApp with your request already prepared.",
     "faq.q2.title": "What does the warranty mean?",
     "faq.q2.text":
       "If you experience an issue during the covered period, contact support on WhatsApp for assistance.",
@@ -392,207 +563,22 @@ const translations = {
     "footer.brand": "Subsaver",
     "footer.text": "Professional ordering page with direct contact and clear pricing.",
     "footer.disclaimer": "Independent seller. This website is not affiliated with or endorsed by Spotify.",
-    "floating.text": "Ready to order?",
-    "floating.cta": "Order on WhatsApp",
     "alerts.copySuccess": "Wallet address copied.",
     "alerts.copyFallback": "Copy this wallet address:",
     "alerts.chooseCountry": "Please choose a country before continuing.",
-    "alerts.enterName": "Please enter your name before continuing.",
     "order.messageWithName":
-      "Hello, my name is {{name}}. I want to order the {{request}}. Country: {{country}}.",
+      "Hello, my name is {{name}}. I want to order {{request}}. Country: {{country}}.",
     "order.messageWithoutName":
-      "Hello, I want to order the {{request}}. Country: {{country}}.",
-  },
-  fr: {
-    "brand.name": "Subsaver",
-    "brand.subtitle": "Commande de forfaits Spotify",
-    "country.kicker": "Détails de commande",
-    "country.title": "Choisissez votre pays",
-    "country.text":
-      "Sélectionnez votre pays, puis continuez directement sur WhatsApp avec votre demande prête à envoyer.",
-    "country.requestLabel": "Demande sélectionnée",
-    "country.nameLabel": "Votre nom",
-    "country.namePlaceholder": "Entrez votre nom",
-    "country.selectLabel": "Pays",
-    "country.chooseOption": "Choisissez un pays",
-    "country.noResults": "Aucun pays trouvé",
-    "country.cta": "Continuer vers WhatsApp",
-    "nav.plans": "Offres",
-    "nav.savings": "Promos",
-    "nav.benefits": "Avantages",
-    "nav.trust": "Pourquoi nous",
-    "nav.payments": "Paiements",
-    "nav.faq": "FAQ",
-    "hero.eyebrow": "Commande sécurisée et assistance rapide",
-    "hero.title": "Forfaits Spotify longue durée avec support direct et prix clairs.",
-    "hero.text":
-      "Payez une fois, commandez en quelques minutes et profitez d'une expérience Premium fluide avec commande directe sur WhatsApp, moyens de paiement flexibles et garantie.",
-    "hero.primaryCta": "Commander sur WhatsApp",
-    "hero.secondaryCta": "Voir les offres",
-    "hero.comparison":
-      "Spotify Premium Individual aux États-Unis est à 12,99 €/mois. Cela représente environ 155,88 € sur 12 mois.",
-    "trust.customers": "Plus de 1 500 ventes réalisées",
-    "trust.fast": "Réponse rapide",
-    "trust.warranty": "Garantie incluse",
-    "trust.secure": "Expérience de commande fiable",
-    "heroPanel.featured": "Choix populaire",
-    "heroPanel.title": "2 ans pour 50 €",
-    "heroPanel.text": "La meilleure offre avec assistance incluse et commande directe sur WhatsApp.",
-    "heroPanel.cta": "Commander 2 ans",
-    "heroPanel.priceLabel": "Offre 1 an",
-    "pricing.oneYear": "38 €",
-    "pricing.twoYears": "50 €",
-    "heroPanel.supportLabel": "Commande",
-    "heroPanel.supportValue": "WhatsApp",
-    "plans.kicker": "Offres",
-    "plans.title": "Choisissez l'offre qui vous convient",
-    "plans.text":
-      "Un prix clair, une commande directe et un support inclus pendant toute la période couverte.",
-    "plans.basicBadge": "Option flexible",
-    "plans.featuredBadge": "Meilleur vendeur",
-    "plans.savingsToggle": "Voir combien vous économisez face à Spotify",
-    "plans.oneYear.title": "1 an",
-    "plans.oneYear.savings": "Vous économisez environ 117,88 € par rapport à Spotify sur 12 mois.",
-    "plans.oneYear.feature1": "Accès complet pendant 1 an",
-    "plans.oneYear.feature2": "Assistance garantie incluse",
-    "plans.oneYear.feature3": "Commande directe sur WhatsApp",
-    "plans.oneYear.feature4": "Paiement PayPal, virement ou crypto",
-    "plans.oneYear.cta": "Commander 1 an",
-    "plans.twoYears.title": "2 ans",
-    "plans.twoYears.savings": "Vous économisez environ 261,76 € par rapport à Spotify sur 24 mois.",
-    "plans.twoYears.feature1": "Accès complet pendant 2 ans",
-    "plans.twoYears.feature2": "Meilleur tarif sur la durée",
-    "plans.twoYears.feature3": "Assistance garantie incluse",
-    "plans.twoYears.feature4": "Commande prioritaire sur WhatsApp",
-    "plans.twoYears.cta": "Commander 2 ans",
-    "request.general": "commande Spotify",
-    "request.oneYear": "forfait Spotify 1 an",
-    "request.twoYears": "forfait Spotify 2 ans",
-    "request.twoAccounts": "commande de 2 comptes Spotify",
-    "request.threeAccounts": "commande de 3 comptes Spotify",
-    "request.paypal": "demande de paiement PayPal",
-    "request.bankTransfer": "demande de virement instantané",
-    "savings.kicker": "Remises groupe",
-    "savings.title": "Achetez plusieurs comptes et réduisez le prix total",
-    "savings.text":
-      "Les remises multi-comptes sont appliquées sur le montant total, ce qui rend les commandes plus importantes encore plus intéressantes.",
-    "savings.card1.label": "2 comptes",
-    "savings.card1.title": "Obtenez 16% de remise sur le montant total",
-    "savings.card1.line1": "Total 1 an : 63,84 € au lieu de 76 €",
-    "savings.card1.line2": "Total 2 ans : 84 € au lieu de 100 €",
-    "savings.card1.line3": "Parfait pour deux comptes commandés ensemble",
-    "savings.card1.cta": "Commander 2 comptes",
-    "savings.card2.label": "3 comptes",
-    "savings.card2.title": "Obtenez 20% de remise sur le montant total",
-    "savings.card2.line1": "Total 1 an : 91,20 € au lieu de 114 €",
-    "savings.card2.line2": "Total 2 ans : 120 € au lieu de 150 €",
-    "savings.card2.line3": "La meilleure remise pour une petite commande de groupe",
-    "savings.card2.cta": "Commander 3 comptes",
-    "savings.card3.label": "Prix Spotify direct",
-    "savings.card3.title": "La facturation mensuelle revient vite cher avec le temps",
-    "savings.card3.line1": "Spotify Premium Individual : 12,99 €/mois",
-    "savings.card3.line2": "Environ 155,88 € pour 12 mois",
-    "savings.card3.line3": "Environ 311,76 € pour 24 mois",
-    "savings.card3.footnote":
-      "Montants affichés en euros sans conversion de devise.",
-    "benefits.kicker": "Avantages Premium",
-    "benefits.title": "Tout ce que les gens recherchent dans une expérience Premium",
-    "benefits.text":
-      "Voici les avantages du quotidien qui rendent Premium plus confortable, plus flexible et plus agréable.",
-    "benefits.card1.label": "Sans pub",
-    "benefits.card1.title": "Profitez de votre musique sans interruptions",
-    "benefits.card1.text":
-      "Écoutez plus confortablement avec une expérience musicale plus fluide et moins d'interruptions.",
-    "benefits.card2.label": "Qualité audio",
-    "benefits.card2.title": "Un meilleur son au quotidien",
-    "benefits.card2.text":
-      "Profitez davantage de vos playlists avec une expérience d'écoute de meilleure qualité.",
-    "benefits.card3.label": "Mode hors ligne",
-    "benefits.card3.title": "Gardez votre musique partout avec vous",
-    "benefits.card3.text":
-      "Écoutez plus facilement lors de vos déplacements quand vous voulez avoir votre musique disponible sans dépendre d'une connexion.",
-    "benefits.card4.label": "Liberté",
-    "benefits.card4.title": "Passez, lancez et écoutez avec plus de contrôle",
-    "benefits.card4.text":
-      "Rendez votre expérience d'écoute plus personnelle avec moins de limites et plus de flexibilité.",
-    "process.kicker": "Fonctionnement",
-    "process.title": "Une commande simple, du message à la confirmation",
-    "process.step1.title": "Choisissez votre offre",
-    "process.step1.text": "Sélectionnez la formule 1 an ou 2 ans selon votre besoin.",
-    "process.step2.title": "Envoyez un message WhatsApp",
-    "process.step2.text": "Indiquez l'offre voulue et la commande sera confirmée dans la discussion.",
-    "process.step3.title": "Payez avec la méthode souhaitée",
-    "process.step3.text": "Utilisez PayPal, le virement instantané ou la crypto après confirmation.",
-    "process.step4.title": "Recevez l'assistance",
-    "process.step4.text": "Le support reste disponible pendant la période couverte si vous avez besoin d'aide.",
-    "trustSection.kicker": "Pourquoi nous choisir",
-    "trustSection.title": "Une expérience de commande professionnelle, simple et fiable",
-    "trustSection.text":
-      "Le service est pensé pour garder la commande claire, la communication directe et le support disponible pendant toute la période couverte.",
-    "trustSection.card1.label": "Communication rapide",
-    "trustSection.card1.title": "Réponses rapides sur WhatsApp",
-    "trustSection.card1.text":
-      "Les commandes sont traitées directement sur WhatsApp pour garder les échanges simples et rapides.",
-    "trustSection.card2.label": "Commande claire",
-    "trustSection.card2.title": "Des étapes simples avant le paiement",
-    "trustSection.card2.text":
-      "Les détails de paiement sont confirmés après discussion de la commande pour garder un processus organisé.",
-    "trustSection.card3.label": "Garantie",
-    "trustSection.card3.title": "Assistance pendant la période couverte",
-    "trustSection.card3.text":
-      "Si vous avez besoin d'aide pendant la durée active du forfait, le support reste disponible sur WhatsApp.",
-    "payments.kicker": "Paiements",
-    "payments.title": "Moyens de paiement flexibles",
-    "payments.text":
-      "Choisissez l'option que vous préférez. Pour la crypto, confirmez toujours le réseau sur WhatsApp avant d'envoyer.",
-    "payments.paypal.title": "Payer avec PayPal",
-    "payments.paypal.text":
-      "Les détails PayPal sont partagés directement sur WhatsApp après confirmation de votre commande.",
-    "payments.paypal.cta": "Demander les détails PayPal",
-    "payments.transfer.kicker": "Virement",
-    "payments.transfer.title": "Virement instantané",
-    "payments.transfer.text":
-      "Les coordonnées bancaires sont envoyées directement sur WhatsApp une fois la commande confirmée.",
-    "payments.transfer.cta": "Demander les coordonnées",
-    "payments.crypto.kicker": "Crypto",
-    "payments.crypto.title": "Adresse de paiement crypto",
-    "payments.crypto.text":
-      "La même adresse est utilisée pour l'USDT sur Ethereum et sur BSC BEP20. Vérifiez bien le réseau avant l'envoi.",
-    "payments.crypto.copy": "Copier",
-    "faq.kicker": "FAQ",
-    "faq.title": "Questions fréquentes",
-    "faq.q1.title": "Comment passer commande ?",
-    "faq.q1.text":
-      "Cliquez sur un bouton WhatsApp, envoyez l'offre choisie et vous recevrez les prochaines étapes directement dans la discussion.",
-    "faq.q2.title": "Que couvre la garantie ?",
-    "faq.q2.text":
-      "Si vous rencontrez un problème pendant la période couverte, contactez le support sur WhatsApp pour recevoir de l'aide.",
-    "faq.q3.title": "Quels moyens de paiement acceptez-vous ?",
-    "faq.q3.text":
-      "PayPal, virement instantané et crypto sont disponibles. Confirmez votre méthode préférée sur WhatsApp avant de payer.",
-    "footer.brand": "Subsaver",
-    "footer.text": "Page de commande professionnelle avec contact direct et prix clairs.",
-    "footer.disclaimer":
-      "Vendeur indépendant. Ce site n'est pas affilié à Spotify et n'est pas approuvé par Spotify.",
-    "floating.text": "Prêt à commander ?",
-    "floating.cta": "Commander sur WhatsApp",
-    "alerts.copySuccess": "Adresse du wallet copiée.",
-    "alerts.copyFallback": "Copiez cette adresse :",
-    "alerts.chooseCountry": "Veuillez choisir un pays avant de continuer.",
-    "alerts.enterName": "Veuillez entrer votre nom avant de continuer.",
-    "order.messageWithName":
-      "Bonjour, je m'appelle {{name}}. Je veux commander {{request}}. Pays : {{country}}.",
-    "order.messageWithoutName":
-      "Bonjour, je veux commander {{request}}. Pays : {{country}}.",
+      "Hello, I want to order {{request}}. Country: {{country}}.",
   },
 };
 
 function getStoredLanguage() {
   try {
     const storedLanguage = window.localStorage.getItem(LANGUAGE_STORAGE_KEY);
-    return storedLanguage && translations[storedLanguage] ? storedLanguage : "en";
+    return storedLanguage && translations[storedLanguage] ? storedLanguage : "fr";
   } catch (error) {
-    return "en";
+    return "fr";
   }
 }
 
@@ -615,22 +601,8 @@ const countryConfirm = document.querySelector("[data-country-confirm]");
 const countryRequestOutput = document.querySelector("[data-country-request]");
 const countryCloseButtons = document.querySelectorAll("[data-country-close]");
 
-function applyCurrencyContent(language) {
-  currencyBindings.forEach(({ selector, key }) => {
-    const value = translations[language][key];
-
-    if (!value) {
-      return;
-    }
-
-    document.querySelectorAll(selector).forEach((node) => {
-      node.textContent = value;
-    });
-  });
-}
-
 function translatePage(language) {
-  const targetLanguage = translations[language] ? language : "en";
+  const targetLanguage = translations[language] ? language : "fr";
 
   currentLanguage = targetLanguage;
   document.documentElement.lang = targetLanguage;
@@ -640,29 +612,24 @@ function translatePage(language) {
     const key = node.dataset.i18n;
     const value = translations[targetLanguage][key];
 
-    if (!value) {
-      return;
+    if (value) {
+      node.textContent = value;
     }
-
-    node.textContent = value;
   });
 
   placeholderNodes.forEach((node) => {
     const key = node.dataset.i18nPlaceholder;
     const value = translations[targetLanguage][key];
 
-    if (!value) {
-      return;
+    if (value) {
+      node.setAttribute("placeholder", value);
     }
-
-    node.setAttribute("placeholder", value);
   });
 
   langButtons.forEach((button) => {
     button.classList.toggle("active", button.dataset.lang === targetLanguage);
   });
 
-  applyCurrencyContent(targetLanguage);
   updateCountryRequest();
   populateCountryOptions();
 
@@ -678,11 +645,9 @@ function getRequestLabel(orderType) {
 }
 
 function updateCountryRequest() {
-  if (!countryRequestOutput) {
-    return;
+  if (countryRequestOutput) {
+    countryRequestOutput.textContent = getRequestLabel(pendingOrderType);
   }
-
-  countryRequestOutput.textContent = getRequestLabel(pendingOrderType);
 }
 
 function populateCountryOptions() {
@@ -714,6 +679,24 @@ function populateCountryOptions() {
   }
 }
 
+function closeMenu() {
+  if (!siteHeader || !menuToggle) {
+    return;
+  }
+
+  siteHeader.classList.remove("menu-open");
+  menuToggle.setAttribute("aria-expanded", "false");
+}
+
+function toggleMenu() {
+  if (!siteHeader || !menuToggle) {
+    return;
+  }
+
+  const isOpen = siteHeader.classList.toggle("menu-open");
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+}
+
 function openCountryModal(orderType) {
   if (!countryModal) {
     return;
@@ -726,6 +709,10 @@ function openCountryModal(orderType) {
   countryModal.setAttribute("aria-hidden", "false");
   document.body.classList.add("modal-open");
   closeMenu();
+
+  if (countryNameInput) {
+    window.setTimeout(() => countryNameInput.focus(), 80);
+  }
 }
 
 function closeCountryModal() {
@@ -760,25 +747,7 @@ function handleOrder() {
   const whatsappUrl = buildWhatsAppOrderUrl(message);
 
   closeCountryModal();
-  window.open(whatsappUrl, "_blank", "noopener");
-}
-
-function closeMenu() {
-  if (!siteHeader || !menuToggle) {
-    return;
-  }
-
-  siteHeader.classList.remove("menu-open");
-  menuToggle.setAttribute("aria-expanded", "false");
-}
-
-function toggleMenu() {
-  if (!siteHeader || !menuToggle) {
-    return;
-  }
-
-  const isOpen = siteHeader.classList.toggle("menu-open");
-  menuToggle.setAttribute("aria-expanded", String(isOpen));
+  window.location.href = whatsappUrl;
 }
 
 async function copyAddress() {
@@ -817,14 +786,6 @@ headerNavLinks.forEach((link) => {
 
 if (menuToggle) {
   menuToggle.addEventListener("click", toggleMenu);
-}
-
-if (countrySelect) {
-  countrySelect.addEventListener("change", () => {
-    if (countrySelect.value) {
-      handleOrder();
-    }
-  });
 }
 
 if (countryConfirm) {
