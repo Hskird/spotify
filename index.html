@@ -24,7 +24,7 @@
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20260425-2" />
+    <link rel="stylesheet" href="styles.css?v=20260425-3" />
   </head>
   <body>
     <div class="page-shell">
@@ -106,8 +106,8 @@
               <p class="hero-savings-kicker" data-i18n="hero.savingsKicker">Meilleure économie</p>
               <strong class="hero-savings-value" data-i18n="hero.savingsValue">Économisez jusqu'à 760 DH</strong>
               <p class="hero-savings-text" data-i18n="hero.savingsText">
-                Les économies sont visibles dès le premier regard pour montrer tout de suite la
-                différence face au prix Spotify classique.
+                Tarifs Maroc et international visibles dès l'ouverture pour comparer immédiatement
+                la différence.
               </p>
             </div>
 
@@ -126,8 +126,8 @@
             </div>
 
             <p class="comparison-note" data-i18n="hero.comparison">
-              Au Maroc, Spotify Premium revient à environ 45 DH/mois, soit 540 DH sur 1 an et
-              1 080 DH sur 2 ans.
+              Maroc : environ 45 DH/mois chez Spotify, soit 540 DH sur 1 an et 1 080 DH sur 2
+              ans. International : environ $12.99/month avant nos offres à $38 et $50.
             </p>
           </div>
 
@@ -143,16 +143,28 @@
               </button>
             </div>
 
-            <div class="mini-grid">
-              <article class="panel-card">
-                <p class="mini-label" data-i18n="heroPanel.priceLabel">Offre 1 an</p>
-                <strong data-i18n="pricing.oneYear">220 DH</strong>
-              </article>
-              <article class="panel-card">
-                <p class="mini-label" data-i18n="heroPanel.supportLabel">Commande</p>
-                <strong class="support-value" data-i18n="heroPanel.supportValue">WhatsApp</strong>
-              </article>
-            </div>
+            <article class="panel-card market-pricing-card">
+              <p class="panel-label market-kicker" data-i18n="hero.marketsKicker">Maroc vs international</p>
+              <h3 data-i18n="hero.marketsTitle">Voyez la différence dès l'entrée sur le site</h3>
+
+              <div class="market-pricing-grid">
+                <div class="market-pricing-box">
+                  <p class="market-name" data-i18n="hero.marketMorocco">Tarifs Maroc</p>
+                  <p class="market-line" data-i18n="hero.marketMoroccoYear">1 an : 220 DH</p>
+                  <p class="market-line" data-i18n="hero.marketMoroccoTwoYears">2 ans : 320 DH</p>
+                </div>
+
+                <div class="market-pricing-box">
+                  <p class="market-name" data-i18n="hero.marketGlobal">US / Canada / Europe</p>
+                  <p class="market-line" data-i18n="hero.marketGlobalYear">1 year : $38</p>
+                  <p class="market-line" data-i18n="hero.marketGlobalTwoYears">2 years : $50</p>
+                </div>
+              </div>
+
+              <p class="market-note" data-i18n="hero.marketNote">
+                En version française, vous voyez directement les tarifs Maroc et international pour comparer en un seul regard.
+              </p>
+            </article>
           </aside>
         </section>
 
@@ -528,6 +540,6 @@
       </div>
     </div>
 
-    <script src="script.js?v=20260425-2"></script>
+    <script src="script.js?v=20260425-3"></script>
   </body>
 </html>
