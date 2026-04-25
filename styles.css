@@ -458,6 +458,20 @@ button {
   min-height: 320px;
 }
 
+@media (min-width: 761px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr) minmax(390px, 450px);
+  }
+
+  .featured-offers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-offer-card {
+    min-height: 0;
+  }
+}
+
 .featured-offer-card h3 {
   margin: 0 0 14px;
   font-family: "Space Grotesk", sans-serif;
