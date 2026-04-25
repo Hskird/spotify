@@ -577,6 +577,56 @@ button {
   line-height: 1.75;
 }
 
+.plan-market-group + .plan-market-group {
+  margin-top: 30px;
+}
+
+.market-section-heading {
+  margin-bottom: 18px;
+}
+
+.market-section-heading h3 {
+  margin: 0 0 10px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  line-height: 1.08;
+}
+
+.market-section-heading p:last-child {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.plans-grid-market {
+  margin-top: 0;
+}
+
+.flag-kicker {
+  gap: 10px;
+}
+
+.morocco-icon {
+  display: inline-flex;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.morocco-icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.morocco-plan-badge {
+  gap: 8px;
+}
+
+[data-language="en"] .morocco-group {
+  display: none;
+}
+
 .plans-grid,
 .savings-grid,
 .payments-grid,
@@ -1234,6 +1284,10 @@ body.modal-open {
 
   .market-pricing-grid {
     grid-template-columns: 1fr;
+  }
+
+  .plan-market-group + .plan-market-group {
+    margin-top: 24px;
   }
 
   .disclaimer {
